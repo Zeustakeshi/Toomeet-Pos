@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.Design;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Toomeet_Pos.DTOs;
+using Toomeet_Pos.Entites.Products;
+
+namespace Toomeet_Pos.BLL.Interfaces
+{
+    public interface IProductService
+    {
+        Product CreateProduct(NewProductDto dto);
+
+        Product GetProductByProductId(ProductId id);
+
+        List<Product> GetAllProduct(long storeId);
+    }
+}
