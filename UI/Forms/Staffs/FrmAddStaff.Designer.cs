@@ -33,7 +33,6 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSendInvite = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -47,10 +46,6 @@
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbDescritptionError = new System.Windows.Forms.Label();
-            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbBirthdayError = new System.Windows.Forms.Label();
             this.datetimeBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -58,33 +53,22 @@
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.cbGender = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbPhoneError = new System.Windows.Forms.Label();
-            this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbNameError = new System.Windows.Forms.Label();
-            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbEmailError = new System.Windows.Forms.Label();
-            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtDescription = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.txtName = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.txtPhone = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.txtEmail = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2Panel11.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.guna2Panel10.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,13 +88,6 @@
             this.guna2Panel1.Size = new System.Drawing.Size(946, 46);
             this.guna2Panel1.TabIndex = 16;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmTileMouseDown);
-            // 
-            // controlBoxGroup1
-            // 
-            this.controlBoxGroup1.Location = new System.Drawing.Point(13, 13);
-            this.controlBoxGroup1.Name = "controlBoxGroup1";
-            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
-            this.controlBoxGroup1.TabIndex = 1;
             // 
             // guna2Panel2
             // 
@@ -143,6 +120,7 @@
             this.btnSendInvite.Size = new System.Drawing.Size(171, 52);
             this.btnSendInvite.TabIndex = 19;
             this.btnSendInvite.Text = "Gửi lời mời";
+            this.btnSendInvite.Click += new System.EventHandler(this.btnSendInvite_Click);
             // 
             // guna2ShadowPanel1
             // 
@@ -230,6 +208,7 @@
             this.llbViewAlRole.TabIndex = 22;
             this.llbViewAlRole.TabStop = true;
             this.llbViewAlRole.Text = "Danh sách vai trò của cửa hàng";
+            this.llbViewAlRole.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbViewAlRole_LinkClicked);
             // 
             // label14
             // 
@@ -288,12 +267,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel10, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtDescription, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtName, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtPhone, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel9, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel8, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel5, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 76);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -303,63 +282,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(906, 249);
             this.tableLayoutPanel1.TabIndex = 14;
-            // 
-            // guna2Panel10
-            // 
-            this.guna2Panel10.Controls.Add(this.lbDescritptionError);
-            this.guna2Panel10.Controls.Add(this.txtDescription);
-            this.guna2Panel10.Controls.Add(this.label12);
-            this.guna2Panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel10.Location = new System.Drawing.Point(8, 127);
-            this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(292, 114);
-            this.guna2Panel10.TabIndex = 21;
-            // 
-            // lbDescritptionError
-            // 
-            this.lbDescritptionError.AutoSize = true;
-            this.lbDescritptionError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescritptionError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(29)))), ((int)(((byte)(72)))));
-            this.lbDescritptionError.Location = new System.Drawing.Point(27, 79);
-            this.lbDescritptionError.Name = "lbDescritptionError";
-            this.lbDescritptionError.Size = new System.Drawing.Size(121, 16);
-            this.lbDescritptionError.TabIndex = 2;
-            this.lbDescritptionError.Text = "Email không hợp lệ";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.BorderRadius = 10;
-            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDescription.DefaultText = "";
-            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDescription.ForeColor = System.Drawing.Color.Black;
-            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.Location = new System.Drawing.Point(21, 35);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.PasswordChar = '\0';
-            this.txtDescription.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.txtDescription.PlaceholderText = "Ví dụ: Nhân viên kế toán trưởng";
-            this.txtDescription.SelectedText = "";
-            this.txtDescription.Size = new System.Drawing.Size(256, 40);
-            this.txtDescription.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(20, 9);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 20);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Ghi Chú";
             // 
             // guna2Panel9
             // 
@@ -391,7 +313,7 @@
             this.datetimeBirthday.BorderRadius = 10;
             this.datetimeBirthday.Checked = true;
             this.datetimeBirthday.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
-            this.datetimeBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.datetimeBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetimeBirthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.datetimeBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.datetimeBirthday.Location = new System.Drawing.Point(24, 35);
@@ -401,6 +323,7 @@
             this.datetimeBirthday.Size = new System.Drawing.Size(253, 36);
             this.datetimeBirthday.TabIndex = 1;
             this.datetimeBirthday.Value = new System.DateTime(2024, 5, 7, 0, 26, 1, 693);
+            this.datetimeBirthday.ValueChanged += new System.EventHandler(this.datetimeBirthday_ValueChanged);
             // 
             // label11
             // 
@@ -417,9 +340,9 @@
             this.guna2Panel8.Controls.Add(this.cbGender);
             this.guna2Panel8.Controls.Add(this.label10);
             this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel8.Location = new System.Drawing.Point(604, 127);
+            this.guna2Panel8.Location = new System.Drawing.Point(8, 127);
             this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(294, 114);
+            this.guna2Panel8.Size = new System.Drawing.Size(292, 114);
             this.guna2Panel8.TabIndex = 19;
             // 
             // cbGender
@@ -437,7 +360,7 @@
             this.cbGender.ItemHeight = 30;
             this.cbGender.Location = new System.Drawing.Point(21, 35);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(245, 36);
+            this.cbGender.Size = new System.Drawing.Size(243, 36);
             this.cbGender.TabIndex = 1;
             // 
             // label10
@@ -449,177 +372,6 @@
             this.label10.Size = new System.Drawing.Size(71, 20);
             this.label10.TabIndex = 0;
             this.label10.Text = "Giới tính";
-            // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.Controls.Add(this.lbPhoneError);
-            this.guna2Panel5.Controls.Add(this.txtPhone);
-            this.guna2Panel5.Controls.Add(this.label9);
-            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel5.Location = new System.Drawing.Point(306, 8);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(292, 113);
-            this.guna2Panel5.TabIndex = 18;
-            // 
-            // lbPhoneError
-            // 
-            this.lbPhoneError.AutoSize = true;
-            this.lbPhoneError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhoneError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(29)))), ((int)(((byte)(72)))));
-            this.lbPhoneError.Location = new System.Drawing.Point(27, 79);
-            this.lbPhoneError.Name = "lbPhoneError";
-            this.lbPhoneError.Size = new System.Drawing.Size(121, 16);
-            this.lbPhoneError.TabIndex = 2;
-            this.lbPhoneError.Text = "Email không hợp lệ";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhone.BorderRadius = 10;
-            this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhone.DefaultText = "";
-            this.txtPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhone.Location = new System.Drawing.Point(21, 35);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.PasswordChar = '\0';
-            this.txtPhone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.txtPhone.PlaceholderText = "Số điện thoại";
-            this.txtPhone.SelectedText = "";
-            this.txtPhone.Size = new System.Drawing.Size(256, 40);
-            this.txtPhone.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(20, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(188, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Số điện thoại đăng nhập";
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.Controls.Add(this.lbNameError);
-            this.guna2Panel3.Controls.Add(this.txtName);
-            this.guna2Panel3.Controls.Add(this.label6);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(8, 8);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(292, 113);
-            this.guna2Panel3.TabIndex = 17;
-            // 
-            // lbNameError
-            // 
-            this.lbNameError.AutoSize = true;
-            this.lbNameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(29)))), ((int)(((byte)(72)))));
-            this.lbNameError.Location = new System.Drawing.Point(27, 79);
-            this.lbNameError.Name = "lbNameError";
-            this.lbNameError.Size = new System.Drawing.Size(121, 16);
-            this.lbNameError.TabIndex = 2;
-            this.lbNameError.Text = "Email không hợp lệ";
-            // 
-            // txtName
-            // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.BorderRadius = 10;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.DefaultText = "";
-            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(21, 35);
-            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.txtName.PlaceholderText = "Ví dụ: Phạm Minh Hiếu";
-            this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(256, 40);
-            this.txtName.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Họ và tên nhân viên";
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.Controls.Add(this.lbEmailError);
-            this.guna2Panel4.Controls.Add(this.txtEmail);
-            this.guna2Panel4.Controls.Add(this.label5);
-            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel4.Location = new System.Drawing.Point(604, 8);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(294, 113);
-            this.guna2Panel4.TabIndex = 16;
-            // 
-            // lbEmailError
-            // 
-            this.lbEmailError.AutoSize = true;
-            this.lbEmailError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmailError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(29)))), ((int)(((byte)(72)))));
-            this.lbEmailError.Location = new System.Drawing.Point(27, 79);
-            this.lbEmailError.Name = "lbEmailError";
-            this.lbEmailError.Size = new System.Drawing.Size(121, 16);
-            this.lbEmailError.TabIndex = 2;
-            this.lbEmailError.Text = "Email không hợp lệ";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.BorderRadius = 10;
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "";
-            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(21, 35);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.txtEmail.PlaceholderText = "Ví dụ: minhhieu@gmail.com";
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(258, 40);
-            this.txtEmail.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Địa chỉ email";
             // 
             // guna2Panel7
             // 
@@ -658,6 +410,73 @@
             this.label2.Text = "Thông tin nhân viên";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtDescription
+            // 
+            this.txtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDescription.ErrorMessage = "";
+            this.txtDescription.IsPassword = false;
+            this.txtDescription.Label = "Ghi chú";
+            this.txtDescription.Location = new System.Drawing.Point(604, 127);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Required = false;
+            this.txtDescription.Size = new System.Drawing.Size(294, 114);
+            this.txtDescription.TabIndex = 25;
+            this.txtDescription.TextboxPlaceholder = "Ví dụ: Nhân viên quản lý kho";
+            this.txtDescription.Value = "";
+            this.txtDescription.ValueChange += new System.EventHandler(this.txtDescription_ValueChange);
+            // 
+            // txtName
+            // 
+            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtName.ErrorMessage = "";
+            this.txtName.IsPassword = false;
+            this.txtName.Label = "Họ và tên";
+            this.txtName.Location = new System.Drawing.Point(8, 8);
+            this.txtName.Name = "txtName";
+            this.txtName.Required = true;
+            this.txtName.Size = new System.Drawing.Size(292, 113);
+            this.txtName.TabIndex = 24;
+            this.txtName.TextboxPlaceholder = "Họ và tên nhân viên";
+            this.txtName.Value = "";
+            this.txtName.ValueChange += new System.EventHandler(this.txtName_ValueChange);
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPhone.ErrorMessage = "";
+            this.txtPhone.IsPassword = false;
+            this.txtPhone.Label = "Số điện thoại";
+            this.txtPhone.Location = new System.Drawing.Point(306, 8);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Required = true;
+            this.txtPhone.Size = new System.Drawing.Size(292, 113);
+            this.txtPhone.TabIndex = 23;
+            this.txtPhone.TextboxPlaceholder = "Số điện thoại đăng nhập";
+            this.txtPhone.Value = "";
+            this.txtPhone.ValueChange += new System.EventHandler(this.txtPhone_ValueChange);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEmail.ErrorMessage = "";
+            this.txtEmail.IsPassword = false;
+            this.txtEmail.Label = "Địa chỉ email";
+            this.txtEmail.Location = new System.Drawing.Point(604, 8);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Required = true;
+            this.txtEmail.Size = new System.Drawing.Size(294, 113);
+            this.txtEmail.TabIndex = 22;
+            this.txtEmail.TextboxPlaceholder = "Địa chỉ email";
+            this.txtEmail.Value = "";
+            this.txtEmail.ValueChange += new System.EventHandler(this.txtEmail_ValueChange);
+            // 
+            // controlBoxGroup1
+            // 
+            this.controlBoxGroup1.Location = new System.Drawing.Point(13, 13);
+            this.controlBoxGroup1.Name = "controlBoxGroup1";
+            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
+            this.controlBoxGroup1.TabIndex = 1;
+            // 
             // FrmAddStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -680,18 +499,10 @@
             this.guna2Panel11.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.guna2Panel10.ResumeLayout(false);
-            this.guna2Panel10.PerformLayout();
             this.guna2Panel9.ResumeLayout(false);
             this.guna2Panel9.PerformLayout();
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
-            this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel5.PerformLayout();
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
             this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel7.PerformLayout();
             this.ResumeLayout(false);
@@ -719,28 +530,16 @@
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2GradientButton btnAddRole;
         private Guna.UI2.WinForms.Guna2GradientButton btnSendInvite;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private System.Windows.Forms.Label lbPhoneError;
-        private Guna.UI2.WinForms.Guna2TextBox txtPhone;
-        private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.Label lbNameError;
-        private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private System.Windows.Forms.Label lbBirthdayError;
         private Guna.UI2.WinForms.Guna2DateTimePicker datetimeBirthday;
         private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
-        private System.Windows.Forms.Label lbDescritptionError;
-        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
-        private System.Windows.Forms.Label label12;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Label lbEmailError;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
-        private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private Guna.UI2.WinForms.Guna2ComboBox cbGender;
         private System.Windows.Forms.Label label10;
+        private UC.CustomTextBox txtDescription;
+        private UC.CustomTextBox txtName;
+        private UC.CustomTextBox txtPhone;
+        private UC.CustomTextBox txtEmail;
     }
 }

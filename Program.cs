@@ -76,6 +76,7 @@ namespace Toomeet_Pos
             services.AddSingleton<IBrandService, BrandService>();
             services.AddSingleton<IAuthService, AuthService>();
             services.AddSingleton<IImageService, ImageService>();
+            services.AddSingleton<IMailService, MailService>();
 
             // VALIDATE
             services.AddSingleton<IAuthValidate, AuthValidate>();

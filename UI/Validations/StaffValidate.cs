@@ -19,6 +19,8 @@ namespace Toomeet_Pos.UI.Validations
         ValidateResult IsValidAddress(string address);
 
         ValidateResult IsValidBirthday(DateTime time);
+
+        ValidateResult IsValidDescription (string description);
     }
 
 
@@ -129,6 +131,17 @@ namespace Toomeet_Pos.UI.Validations
             {
                 return ValidateResult.Error("Nhân viên chưa đủ 18 tuổi.");
             }
+
+            return ValidateResult.Success();
+        }
+
+        public ValidateResult IsValidDescription(string description)
+        {
+            if (description.Length == 0) return ValidateResult.Success();
+
+            if (description.Length < 5) return ValidateResult.Error("Mô tả quá ngắn");
+
+            if (description.Length > 150) return ValidateResult.Error("Mô tả quá dài");
 
             return ValidateResult.Success();
         }

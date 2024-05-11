@@ -121,7 +121,9 @@
     <Compile Include="BLL\Interfaces\IBrandService.cs" />
     <Compile Include="BLL\Interfaces\ICategoryService.cs" />
     <Compile Include="BLL\Interfaces\IImageService.cs" />
+    <Compile Include="BLL\Interfaces\IMailService.cs" />
     <Compile Include="BLL\Interfaces\IProductService.cs" />
+    <Compile Include="BLL\MailService.cs" />
     <Compile Include="BLL\ProductService.cs" />
     <Compile Include="BLL\StaffService.cs" />
     <Compile Include="BLL\Interfaces\IStaffService.cs" />
@@ -145,6 +147,7 @@
     <Compile Include="DAL\Repositories\StaffRepository.cs" />
     <Compile Include="DAL\Repositories\StoreRepository.cs" />
     <Compile Include="DTOs\ChangePasswordDto.cs" />
+    <Compile Include="DTOs\InviteStaffMailDto.cs" />
     <Compile Include="DTOs\NewBrandDto.cs" />
     <Compile Include="DTOs\NewCategoryDto.cs" />
     <Compile Include="DTOs\NewProductDto.cs" />
@@ -297,6 +300,12 @@
     <Compile Include="UI\Forms\Staffs\FrmAddRole.Designer.cs">
       <DependentUpon>FrmAddRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Forms\Staffs\FrmManageRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\Staffs\FrmManageRole.Designer.cs">
+      <DependentUpon>FrmManageRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Forms\Staffs\FrmUpdateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -427,6 +436,9 @@
     <EmbeddedResource Include="UI\Forms\Staffs\FrmAddRole.resx">
       <DependentUpon>FrmAddRole.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\Staffs\FrmManageRole.resx">
+      <DependentUpon>FrmManageRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\Staffs\FrmUpdateAccount.resx">
       <DependentUpon>FrmUpdateAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -542,6 +554,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\default_avatar.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Templates\NewStaffEmailTemplate.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

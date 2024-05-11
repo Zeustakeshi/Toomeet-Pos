@@ -4,6 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Toomeet_Pos.BLL.Interfaces;
 using Toomeet_Pos.DAL;
 using Toomeet_Pos.DAL.Interfaces;
@@ -16,14 +17,17 @@ namespace Toomeet_Pos.BLL
     {
         private readonly IStaffRepository _staffRepository;
         private readonly IRoleService _roleService;
+        private readonly IMailService _mailService;
             
         public StaffService (
             IStaffRepository staffRepository,
-            IRoleService roleService
+            IRoleService roleService,
+            IMailService mailService
         )
         {
             _roleService = roleService;
             _staffRepository = staffRepository;
+            _mailService = mailService;
         }
 
         public Staff GetStaffById (long staffId)
@@ -48,6 +52,14 @@ namespace Toomeet_Pos.BLL
 
             Role role = _roleService.GetRoleById(staff.Role.Id);
             staff.Role = role;
+
+            if (staff.Status.Equals(StaffStatus.NOT_STARTED))
+            {
+                staff.Status = StaffStatus.WORKING;
+                UpdateStaff(staff);
+            }
+
+
             return staff;
         }
 
@@ -87,14 +99,31 @@ namespace Toomeet_Pos.BLL
 
         public Staff SaveStaff(NewStaffDto dto)
         {
-            Staff newStaff = dto.Staff;
+            Staff staff = dto.Staff;
 
-            newStaff.Workplace = dto.Store;
-            newStaff.WorkplaceId = dto.Store.Id;
-            newStaff.Role = dto.Role;
-            newStaff.Password = HashPassword(newStaff.Password);
+            staff.Workplace = dto.Store;
+            staff.WorkplaceId = dto.Store.Id;
+            staff.Role = dto.Role;
+            staff.Password = GenerateRandomPassword();
 
-            return _staffRepository.SaveStaff(newStaff);
+            string plainPassword = staff.Password;
+            staff.Password = HashPassword(plainPassword);
+
+            Staff newStaff =  _staffRepository.SaveStaff(staff);
+
+            _mailService.SendMailInviteStaff(new InviteStaffMailDto()
+            {
+                StaffEmail = newStaff.Email,
+                StaffName = newStaff.Name,
+                StaffPassword = plainPassword,
+                StaffPhone = newStaff.Phone,
+                StoreName = dto.Store.Name,
+                StoreEmail = dto.Store.Owner.Email,
+                StorePhone = dto.Store.Owner.Phone,
+                StoreOwnerName = dto.Store.Owner.Name
+            });
+
+            return newStaff;
         }
 
 
@@ -186,6 +215,22 @@ namespace Toomeet_Pos.BLL
             staff.Password = HashPassword(dto.NewPassword);
 
             return _staffRepository.UpdateStaff(staff);
+        }
+
+        private string GenerateRandomPassword (int length = 12)
+        {
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+";
+
+
+            char[] password = new char[length];
+
+            Random random = new Random();
+            for (int i = 0; i < length; i++)
+            {
+                password[i] = chars[random.Next(chars.Length)];
+            }
+
+            return new string(password);
         }
     }
 }
