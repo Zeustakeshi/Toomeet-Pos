@@ -54,7 +54,9 @@ namespace Toomeet_Pos.DAL.Repositories
 
         public List<Staff> GetAllStaffByStoreId(long storeId)
         {
-            return _db.Staff.Where(s => s.WorkplaceId.Equals(storeId))
+            return _db.Staff
+                .Include(s => s.Role)
+                .Where(s => s.WorkplaceId.Equals(storeId))
                 .ToList();
         }
 

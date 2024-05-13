@@ -128,7 +128,9 @@
                         Order_Id = c.Long(nullable: false),
                         Product_Id = c.Long(nullable: false),
                         Staff_Id = c.Long(nullable: false),
-                    })
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdatedAt = c.DateTime(nullable: false),
+                })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("public.RoleCustomers", t => t.Customer_Id, cascadeDelete: true)
                 .ForeignKey("public.RoleInvetoryInspections", t => t.InvetoryInspection_Id, cascadeDelete: true)

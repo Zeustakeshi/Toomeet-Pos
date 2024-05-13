@@ -58,7 +58,7 @@ namespace Toomeet_Pos.UI.Forms.Dashboard
             // check role
             if (!_roleService.CanGeneralConfiguration(_currentStaff))
             {
-                sidebarItemAccount.Visible = false;
+                sidebarItemSettings.Visible = false;
             }
         }
 
@@ -210,5 +210,6 @@ namespace Toomeet_Pos.UI.Forms.Dashboard
             Close();
 
         }
+
     }
 }

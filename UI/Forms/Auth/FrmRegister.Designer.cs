@@ -76,13 +76,13 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
             this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
             this.guna2Panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.guna2Panel11.SuspendLayout();
@@ -698,6 +698,13 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1256, 44);
             this.guna2Panel1.TabIndex = 14;
             // 
+            // controlBoxGroup1
+            // 
+            this.controlBoxGroup1.Location = new System.Drawing.Point(9, 12);
+            this.controlBoxGroup1.Name = "controlBoxGroup1";
+            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
+            this.controlBoxGroup1.TabIndex = 1;
+            // 
             // guna2ResizeForm1
             // 
             this.guna2ResizeForm1.TargetForm = this;
@@ -776,15 +783,9 @@
             this.guna2CirclePictureBox3.TabIndex = 8;
             this.guna2CirclePictureBox3.TabStop = false;
             // 
-            // controlBoxGroup1
-            // 
-            this.controlBoxGroup1.Location = new System.Drawing.Point(9, 12);
-            this.controlBoxGroup1.Name = "controlBoxGroup1";
-            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
-            this.controlBoxGroup1.TabIndex = 1;
-            // 
             // FrmRegister
             // 
+            this.AcceptButton = this.btnRegister;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

@@ -33,6 +33,7 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSendInvite = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -46,6 +47,9 @@
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtDescription = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.txtName = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.txtPhone = new Toomeet_Pos.UI.UC.CustomTextBox();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbBirthdayError = new System.Windows.Forms.Label();
             this.datetimeBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -53,14 +57,10 @@
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.cbGender = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtEmail = new Toomeet_Pos.UI.UC.CustomTextBox();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDescription = new Toomeet_Pos.UI.UC.CustomTextBox();
-            this.txtName = new Toomeet_Pos.UI.UC.CustomTextBox();
-            this.txtPhone = new Toomeet_Pos.UI.UC.CustomTextBox();
-            this.txtEmail = new Toomeet_Pos.UI.UC.CustomTextBox();
-            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -88,6 +88,13 @@
             this.guna2Panel1.Size = new System.Drawing.Size(946, 46);
             this.guna2Panel1.TabIndex = 16;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmTileMouseDown);
+            // 
+            // controlBoxGroup1
+            // 
+            this.controlBoxGroup1.Location = new System.Drawing.Point(13, 13);
+            this.controlBoxGroup1.Name = "controlBoxGroup1";
+            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
+            this.controlBoxGroup1.TabIndex = 1;
             // 
             // guna2Panel2
             // 
@@ -283,6 +290,51 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(906, 249);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
+            // txtDescription
+            // 
+            this.txtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDescription.ErrorMessage = "";
+            this.txtDescription.IsPassword = false;
+            this.txtDescription.Label = "Ghi chú";
+            this.txtDescription.Location = new System.Drawing.Point(604, 127);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Required = false;
+            this.txtDescription.Size = new System.Drawing.Size(294, 114);
+            this.txtDescription.TabIndex = 25;
+            this.txtDescription.TextboxPlaceholder = "Ví dụ: Nhân viên quản lý kho";
+            this.txtDescription.Value = "";
+            this.txtDescription.ValueChange += new System.EventHandler(this.txtDescription_ValueChange);
+            // 
+            // txtName
+            // 
+            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtName.ErrorMessage = "";
+            this.txtName.IsPassword = false;
+            this.txtName.Label = "Họ và tên";
+            this.txtName.Location = new System.Drawing.Point(8, 8);
+            this.txtName.Name = "txtName";
+            this.txtName.Required = true;
+            this.txtName.Size = new System.Drawing.Size(292, 113);
+            this.txtName.TabIndex = 24;
+            this.txtName.TextboxPlaceholder = "Họ và tên nhân viên";
+            this.txtName.Value = "";
+            this.txtName.ValueChange += new System.EventHandler(this.txtName_ValueChange);
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPhone.ErrorMessage = "";
+            this.txtPhone.IsPassword = false;
+            this.txtPhone.Label = "Số điện thoại";
+            this.txtPhone.Location = new System.Drawing.Point(306, 8);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Required = true;
+            this.txtPhone.Size = new System.Drawing.Size(292, 113);
+            this.txtPhone.TabIndex = 23;
+            this.txtPhone.TextboxPlaceholder = "Số điện thoại đăng nhập";
+            this.txtPhone.Value = "";
+            this.txtPhone.ValueChange += new System.EventHandler(this.txtPhone_ValueChange);
+            // 
             // guna2Panel9
             // 
             this.guna2Panel9.Controls.Add(this.lbBirthdayError);
@@ -373,6 +425,21 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Giới tính";
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEmail.ErrorMessage = "";
+            this.txtEmail.IsPassword = false;
+            this.txtEmail.Label = "Địa chỉ email";
+            this.txtEmail.Location = new System.Drawing.Point(604, 8);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Required = true;
+            this.txtEmail.Size = new System.Drawing.Size(294, 113);
+            this.txtEmail.TabIndex = 22;
+            this.txtEmail.TextboxPlaceholder = "Địa chỉ email";
+            this.txtEmail.Value = "";
+            this.txtEmail.ValueChange += new System.EventHandler(this.txtEmail_ValueChange);
+            // 
             // guna2Panel7
             // 
             this.guna2Panel7.Controls.Add(this.label1);
@@ -409,73 +476,6 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Thông tin nhân viên";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescription.ErrorMessage = "";
-            this.txtDescription.IsPassword = false;
-            this.txtDescription.Label = "Ghi chú";
-            this.txtDescription.Location = new System.Drawing.Point(604, 127);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Required = false;
-            this.txtDescription.Size = new System.Drawing.Size(294, 114);
-            this.txtDescription.TabIndex = 25;
-            this.txtDescription.TextboxPlaceholder = "Ví dụ: Nhân viên quản lý kho";
-            this.txtDescription.Value = "";
-            this.txtDescription.ValueChange += new System.EventHandler(this.txtDescription_ValueChange);
-            // 
-            // txtName
-            // 
-            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtName.ErrorMessage = "";
-            this.txtName.IsPassword = false;
-            this.txtName.Label = "Họ và tên";
-            this.txtName.Location = new System.Drawing.Point(8, 8);
-            this.txtName.Name = "txtName";
-            this.txtName.Required = true;
-            this.txtName.Size = new System.Drawing.Size(292, 113);
-            this.txtName.TabIndex = 24;
-            this.txtName.TextboxPlaceholder = "Họ và tên nhân viên";
-            this.txtName.Value = "";
-            this.txtName.ValueChange += new System.EventHandler(this.txtName_ValueChange);
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPhone.ErrorMessage = "";
-            this.txtPhone.IsPassword = false;
-            this.txtPhone.Label = "Số điện thoại";
-            this.txtPhone.Location = new System.Drawing.Point(306, 8);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Required = true;
-            this.txtPhone.Size = new System.Drawing.Size(292, 113);
-            this.txtPhone.TabIndex = 23;
-            this.txtPhone.TextboxPlaceholder = "Số điện thoại đăng nhập";
-            this.txtPhone.Value = "";
-            this.txtPhone.ValueChange += new System.EventHandler(this.txtPhone_ValueChange);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEmail.ErrorMessage = "";
-            this.txtEmail.IsPassword = false;
-            this.txtEmail.Label = "Địa chỉ email";
-            this.txtEmail.Location = new System.Drawing.Point(604, 8);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Required = true;
-            this.txtEmail.Size = new System.Drawing.Size(294, 113);
-            this.txtEmail.TabIndex = 22;
-            this.txtEmail.TextboxPlaceholder = "Địa chỉ email";
-            this.txtEmail.Value = "";
-            this.txtEmail.ValueChange += new System.EventHandler(this.txtEmail_ValueChange);
-            // 
-            // controlBoxGroup1
-            // 
-            this.controlBoxGroup1.Location = new System.Drawing.Point(13, 13);
-            this.controlBoxGroup1.Name = "controlBoxGroup1";
-            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
-            this.controlBoxGroup1.TabIndex = 1;
             // 
             // FrmAddStaff
             // 

@@ -10,7 +10,7 @@ using Toomeet_Pos.Entites.Roles;
 
 namespace Toomeet_Pos.Entites
 {
-    public class Role
+    public class Role : BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

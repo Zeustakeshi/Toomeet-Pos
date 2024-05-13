@@ -129,7 +129,7 @@ namespace Toomeet_Pos.BLL
 
         public List<Staff> SearchStaff(string keyword)
         {
-            return _staffRepository.GetAllStaffContainsKeyword(keyword);
+            return _staffRepository.GetAllStaffContainsKeyword(keyword.ToLower());
         }
 
         public bool IsExistedStaffByPhone (string phone)

@@ -20,30 +20,29 @@ namespace Toomeet_Pos.UI.Forms
     public partial class FrmAddStaff : Form
     {
 
-
-        private readonly IRoleService _roleService;
-        private readonly IAuthService _authService;
-        private readonly IStaffValidate _staffValidate;
         private readonly IStaffService _staffService;
+        private readonly IAuthService _authService;
+        private readonly IRoleService _roleService;
+        private readonly IStaffValidate _staffValidate;
 
+        private List<Role> _roles;
         private Store _store;
         private Staff _currentStaff;
 
-        private List<Role> _roles;
+
+
 
         public FrmAddStaff()
         {
             InitializeComponent();
 
-            _roleService = Program.GetService<IRoleService>();
-            _authService = Program.GetService<IAuthService>();
             _staffService = Program.GetService<IStaffService>();
-
+            _authService = Program.GetService<IAuthService>();
+            _roleService = Program.GetService<IRoleService>();
             _staffValidate = Program.GetService<IStaffValidate>();
 
             _store = _authService.GetStoreInfo();
             _currentStaff = _authService.GetAuthenticatedStaff();
-                
 
             if (!_roleService.CanManageRole(_currentStaff))
             {
@@ -53,6 +52,7 @@ namespace Toomeet_Pos.UI.Forms
                 llbViewAlRole.Visible = false;
             }
 
+            lbBirthdayError.Text = "";
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -95,6 +95,7 @@ namespace Toomeet_Pos.UI.Forms
         private void LoadAllRole ()
         {
             _roles = _roleService.GetAllRoleByStoreId(_store.Id);
+
             cbRole.Items.Clear();
 
             foreach (Role role in _roles)
@@ -112,16 +113,6 @@ namespace Toomeet_Pos.UI.Forms
             frmAddRole.ShowDialog();
             Show();
             LoadAllRole();
-        }
-
-        private void llbViewAlRole_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            FrmManageRole frmManageRole = new FrmManageRole();
-            Hide();
-            frmManageRole.ShowDialog();
-            Show();
-            LoadAllRole();
-
         }
 
         private void btnSendInvite_Click(object sender, EventArgs e)
@@ -267,6 +258,7 @@ namespace Toomeet_Pos.UI.Forms
             }
 
             txtEmail.ErrorMessage = "";
+
         }
 
         private void txtDescription_ValueChange(object sender, EventArgs e)
@@ -283,22 +275,31 @@ namespace Toomeet_Pos.UI.Forms
             }
 
             txtDescription.ErrorMessage = "";
+
         }
 
         private void datetimeBirthday_ValueChanged(object sender, EventArgs e)
         {
             DateTime birthday = datetimeBirthday.Value;
 
-            ValidateResult birthDayValidate = _staffValidate.IsValidBirthday(birthday);
+            ValidateResult birthdayValidate = _staffValidate.IsValidBirthday(birthday);
 
-            if (birthDayValidate.IsError)
+            if (birthdayValidate.IsError)
             {
-                lbBirthdayError.Text = birthDayValidate.ErrorMessage;
+                lbBirthdayError.Text = birthdayValidate.ErrorMessage;
                 datetimeBirthday.Focus();
                 return;
             }
 
             lbBirthdayError.Text = "";
+        }
+
+        private void llbViewAlRole_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmManageRole frmManageRole = new FrmManageRole();
+            Hide();
+            frmManageRole.ShowDialog();
+            Show();
         }
     }
 }
