@@ -80,9 +80,9 @@ namespace Toomeet_Pos.UI.Forms
 
         private void OpenStaffManage (object sender, EventArgs e)
         {
-            FrmManageStaff frmManageStaff = new FrmManageStaff();
+            FrmManageRole frmManageRole = new FrmManageRole();
 
-            frmManageStaff.ShowDialog();
+            frmManageRole.ShowDialog();
 
         }
     }

@@ -14,6 +14,7 @@ using Toomeet_Pos.DAL.Interfaces;
 using Toomeet_Pos.Entites;
 using Toomeet_Pos.UI.Forms.Order;
 using Toomeet_Pos.UI.Forms.Overview;
+using Toomeet_Pos.UI.Forms.Products;
 using Toomeet_Pos.UI.Forms.Staffs;
 
 namespace Toomeet_Pos.UI.Forms.Dashboard
@@ -87,6 +88,7 @@ namespace Toomeet_Pos.UI.Forms.Dashboard
             sidebarItemSoldAtTheCounter.Text = "Bán tại quầy";
             sidebarItemSettings.Text = "Cấu hình";
             sidebarItemAccount.Text = "Tài khoản";
+            sidebarItemStaffManagement.Text = "Nhân viên";
             btnLogout.Text = "Đăng xuất";
         }
 
@@ -104,7 +106,9 @@ namespace Toomeet_Pos.UI.Forms.Dashboard
             sidebarItemSoldAtTheCounter.Text = "";
             sidebarItemAccount.Text = "";
             sidebarItemSettings.Text = "";
+            sidebarItemStaffManagement.Text = "";
             btnLogout.Text = "";
+
         }
 
         private void OpenSubForm (Form frmSub)
@@ -143,6 +147,7 @@ namespace Toomeet_Pos.UI.Forms.Dashboard
         private void sidebarItemProduct_Click(object sender, EventArgs e)
         {
             ActiveSideBarItem(sender);
+            OpenSubForm(new FrmManageProducts());
 
         }
 
@@ -186,6 +191,13 @@ namespace Toomeet_Pos.UI.Forms.Dashboard
         }
 
 
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            ActiveSideBarItem(sender);
+            OpenSubForm(new FrmManageStaff());
+        }
+
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -211,5 +223,6 @@ namespace Toomeet_Pos.UI.Forms.Dashboard
 
         }
 
+     
     }
 }

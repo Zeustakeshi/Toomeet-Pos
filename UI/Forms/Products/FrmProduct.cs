@@ -56,7 +56,7 @@ namespace Toomeet_Pos.UI.Forms.Products
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            FrmAddProduct frmAddProduct = new FrmAddProduct(_store, _currentStaff);
+            FrmAddProduct frmAddProduct = new FrmAddProduct();
             frmAddProduct.ShowDialog();
             LoadAllProduct();
         }

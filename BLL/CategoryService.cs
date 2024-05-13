@@ -29,7 +29,7 @@ namespace Toomeet_Pos.BLL
 
 
 
-        public Category CreateCategory(NewCategoryDto dto)
+        public Category CreateCategory(SaveCategoryDto dto)
         {
             Store store = dto.Store;
             Staff staff = dto.Staff;
@@ -53,7 +53,51 @@ namespace Toomeet_Pos.BLL
 
         }
 
-      
+        public Category UpdateCategory(SaveCategoryDto dto)
+        {
+            Store store = dto.Store;
+            Staff staff = dto.Staff;
+            Category category = dto.Category;
+
+            if (store == null || staff == null || category == null)
+            {
+                throw new Exception("Không đủ thông tin để cập nhật loại sản phẩm");
+            }
+
+            if (!_roleService.CanEditProduct(staff))
+            {
+                throw new Exception(staff.Name + " không có quyền cập nhật loại sản phẩm");
+            }
+
+            return _categoryRepository.UpdateCategory(dto.Category);
+        }
+
+
+        public void DeleteCategoryById(string categoryId)
+        {
+            Category category = _categoryRepository.GetCategoryById(categoryId);
+
+            _categoryRepository.DeleteCategoryById(category);
+        }
+
+        public Category UpsertCategory (SaveCategoryDto dto)
+        {
+            Store store = dto.Store;
+            Staff staff = dto.Staff;
+            Category category = dto.Category;
+
+            if (store == null || staff == null || category == null)
+            {
+                throw new Exception("Không đủ thông tin để cập nhật loại sản phẩm");
+            }
+
+            Category existedCategory = _categoryRepository.GetCategoryById(category.Id);
+
+            if (existedCategory != null) return UpdateCategory(dto);
+            else return CreateCategory(dto);
+            
+        }
+
     }
 
 

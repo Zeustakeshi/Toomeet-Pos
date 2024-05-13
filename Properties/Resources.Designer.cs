@@ -143,6 +143,26 @@ namespace Toomeet_Pos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download_icon4 {
+            get {
+                object obj = ResourceManager.GetObject("download_icon4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap employee_group_ico {
+            get {
+                object obj = ResourceManager.GetObject("employee_group_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fast_back_ico {
             get {
                 object obj = ResourceManager.GetObject("fast_back_ico", resourceCulture);
@@ -233,9 +253,29 @@ namespace Toomeet_Pos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus_ico {
+            get {
+                object obj = ResourceManager.GetObject("plus_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap point_of_sale_ico {
             get {
                 object obj = ResourceManager.GetObject("point-of-sale_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap product_default_image {
+            get {
+                object obj = ResourceManager.GetObject("product_default_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +346,16 @@ namespace Toomeet_Pos.Properties {
         internal static System.Drawing.Bitmap sidebar_ico {
             get {
                 object obj = ResourceManager.GetObject("sidebar_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap store_image {
+            get {
+                object obj = ResourceManager.GetObject("store_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -8,7 +8,7 @@ using Toomeet_Pos.Entites.Products;
 
 namespace Toomeet_Pos.DTOs
 {
-    public class NewCategoryDto
+    public class SaveCategoryDto
     {
         public Staff Staff { get; set; }
         public Store Store { get; set; }

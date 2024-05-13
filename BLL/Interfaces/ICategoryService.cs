@@ -12,7 +12,13 @@ namespace Toomeet_Pos.BLL.Interfaces
     {
         List<Category> GetAllCategories(long storeId);
 
-        Category CreateCategory(NewCategoryDto dto);
-        
+        Category CreateCategory(SaveCategoryDto dto);
+
+        Category UpdateCategory(SaveCategoryDto dto);
+
+
+        Category UpsertCategory(SaveCategoryDto dto);
+
+        void DeleteCategoryById (string categoryId);
     }
 }

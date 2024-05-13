@@ -39,5 +39,7 @@ namespace Toomeet_Pos.DAL.Interfaces
 
         bool CanViewProduct(Staff staff);
 
+        bool CanEditProduct(Staff staff);
+
     }
 }

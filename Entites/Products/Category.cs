@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Toomeet_Pos.Entites.Products
 {
-    public class Category
+    public class Category : BaseEntity
     {
         [Key]
-        public long Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public long StoreId { get; set; }

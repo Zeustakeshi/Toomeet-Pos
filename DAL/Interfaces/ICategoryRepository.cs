@@ -12,5 +12,14 @@ namespace Toomeet_Pos.DAL.Interfaces
         List<Category> GetAllCategoriesByStoreId(long storeId);
 
         Category SaveCategory(Category category);
+
+
+        Category UpdateCategory(Category category);
+
+        Category GetCategoryById(string id);
+
+        bool IsExistedCategoryById(string id);
+
+        void DeleteCategoryById(Category category);
     }
 }

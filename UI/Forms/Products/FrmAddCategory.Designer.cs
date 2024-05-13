@@ -1,4 +1,4 @@
-﻿namespace Toomeet_Pos.UI.Forms.Products
+﻿namespace Toomeet_Pos.UI.Forms
 {
     partial class FrmAddCategory
     {
@@ -28,145 +28,189 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtCategoryName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtCategoryDescription = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddCategory = new Guna.UI2.WinForms.Guna2Button();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddCategory));
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAddNewCategory = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.txtCategoryDesc = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.txtCategoryId = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.txtCategoryName = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2Panel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // guna2BorderlessForm1
             // 
-            this.panel2.Controls.Add(this.txtCategoryName);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(423, 67);
-            this.panel2.TabIndex = 7;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.controlBoxGroup1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(20);
+            this.guna2Panel1.Size = new System.Drawing.Size(492, 46);
+            this.guna2Panel1.TabIndex = 16;
+            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmTileMouseDown);
+            // 
+            // controlBoxGroup1
+            // 
+            this.controlBoxGroup1.Location = new System.Drawing.Point(13, 13);
+            this.controlBoxGroup1.Name = "controlBoxGroup1";
+            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
+            this.controlBoxGroup1.TabIndex = 1;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.btnAddNewCategory);
+            this.guna2Panel2.Controls.Add(this.guna2ShadowPanel1);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 46);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.guna2Panel2.Size = new System.Drawing.Size(492, 630);
+            this.guna2Panel2.TabIndex = 17;
+            // 
+            // btnAddNewCategory
+            // 
+            this.btnAddNewCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewCategory.BorderRadius = 10;
+            this.btnAddNewCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddNewCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddNewCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddNewCategory.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddNewCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddNewCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnAddNewCategory.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
+            this.btnAddNewCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddNewCategory.ForeColor = System.Drawing.Color.White;
+            this.btnAddNewCategory.Location = new System.Drawing.Point(10, 559);
+            this.btnAddNewCategory.Name = "btnAddNewCategory";
+            this.btnAddNewCategory.Size = new System.Drawing.Size(469, 44);
+            this.btnAddNewCategory.TabIndex = 25;
+            this.btnAddNewCategory.Text = "Thêm";
+            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.label3);
+            this.guna2ShadowPanel1.Controls.Add(this.txtCategoryDesc);
+            this.guna2ShadowPanel1.Controls.Add(this.txtCategoryId);
+            this.guna2ShadowPanel1.Controls.Add(this.txtCategoryName);
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(10, 10);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.guna2ShadowPanel1.ShadowDepth = 50;
+            this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(469, 534);
+            this.guna2ShadowPanel1.TabIndex = 18;
+            // 
+            // txtCategoryDesc
+            // 
+            this.txtCategoryDesc.ErrorMessage = "";
+            this.txtCategoryDesc.IsPassword = false;
+            this.txtCategoryDesc.Label = "Ghi Chú";
+            this.txtCategoryDesc.Location = new System.Drawing.Point(20, 282);
+            this.txtCategoryDesc.Name = "txtCategoryDesc";
+            this.txtCategoryDesc.Required = true;
+            this.txtCategoryDesc.Size = new System.Drawing.Size(421, 233);
+            this.txtCategoryDesc.TabIndex = 28;
+            this.txtCategoryDesc.TextAreaMode = true;
+            this.txtCategoryDesc.TextboxPlaceholder = "Ghi chú loại sản phẩm";
+            this.txtCategoryDesc.TextBoxSize = new System.Drawing.Size(385, 171);
+            this.txtCategoryDesc.Value = "";
+            // 
+            // txtCategoryId
+            // 
+            this.txtCategoryId.ErrorMessage = "";
+            this.txtCategoryId.IsPassword = false;
+            this.txtCategoryId.Label = "Mã loại sản phẩm";
+            this.txtCategoryId.Location = new System.Drawing.Point(20, 165);
+            this.txtCategoryId.Name = "txtCategoryId";
+            this.txtCategoryId.Required = true;
+            this.txtCategoryId.Size = new System.Drawing.Size(426, 102);
+            this.txtCategoryId.TabIndex = 27;
+            this.txtCategoryId.TextAreaMode = false;
+            this.txtCategoryId.TextboxPlaceholder = "Mã loại sản phẩm";
+            this.txtCategoryId.TextBoxSize = new System.Drawing.Size(390, 40);
+            this.txtCategoryId.Value = "";
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCategoryName.DefaultText = "";
-            this.txtCategoryName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCategoryName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCategoryName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCategoryName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCategoryName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCategoryName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCategoryName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCategoryName.Location = new System.Drawing.Point(20, 34);
-            this.txtCategoryName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCategoryName.ErrorMessage = "";
+            this.txtCategoryName.IsPassword = false;
+            this.txtCategoryName.Label = "Tên loại sản phẩm";
+            this.txtCategoryName.Location = new System.Drawing.Point(20, 57);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.PasswordChar = '\0';
-            this.txtCategoryName.PlaceholderText = "";
-            this.txtCategoryName.SelectedText = "";
-            this.txtCategoryName.Size = new System.Drawing.Size(383, 26);
-            this.txtCategoryName.TabIndex = 2;
-            this.txtCategoryName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
+            this.txtCategoryName.Required = true;
+            this.txtCategoryName.Size = new System.Drawing.Size(426, 102);
+            this.txtCategoryName.TabIndex = 26;
+            this.txtCategoryName.TextAreaMode = false;
+            this.txtCategoryName.TextboxPlaceholder = "Ví dụ: Nước suối";
+            this.txtCategoryName.TextBoxSize = new System.Drawing.Size(390, 40);
+            this.txtCategoryName.Value = "";
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên loại sản phẩm";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txtCategoryDescription);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 95);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(423, 108);
-            this.panel1.TabIndex = 8;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // txtCategoryDescription
-            // 
-            this.txtCategoryDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCategoryDescription.DefaultText = "";
-            this.txtCategoryDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCategoryDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCategoryDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCategoryDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCategoryDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCategoryDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCategoryDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCategoryDescription.Location = new System.Drawing.Point(20, 34);
-            this.txtCategoryDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCategoryDescription.Multiline = true;
-            this.txtCategoryDescription.Name = "txtCategoryDescription";
-            this.txtCategoryDescription.PasswordChar = '\0';
-            this.txtCategoryDescription.PlaceholderText = "";
-            this.txtCategoryDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtCategoryDescription.SelectedText = "";
-            this.txtCategoryDescription.Size = new System.Drawing.Size(383, 70);
-            this.txtCategoryDescription.TabIndex = 2;
-            this.txtCategoryDescription.TextChanged += new System.EventHandler(this.txtCategoryDescription_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mô tả";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // btnAddCategory
-            // 
-            this.btnAddCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddCategory.ForeColor = System.Drawing.Color.White;
-            this.btnAddCategory.Location = new System.Drawing.Point(253, 212);
-            this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(180, 45);
-            this.btnAddCategory.TabIndex = 9;
-            this.btnAddCategory.Text = "Thêm";
-            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(231, 29);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Thêm loại sản phẩm";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmAddCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(445, 269);
-            this.Controls.Add(this.btnAddCategory);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ClientSize = new System.Drawing.Size(492, 676);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddCategory";
-            this.Text = "FrmAddCategory";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FrmTemplate";
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2ShadowPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2TextBox txtCategoryName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2TextBox txtCategoryDescription;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnAddCategory;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2ResizeForm guna2ResizeForm1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private UC.ControlBoxGroupMacOs controlBoxGroup1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnAddNewCategory;
+        private UC.CustomTextBox txtCategoryDesc;
+        private UC.CustomTextBox txtCategoryId;
+        private UC.CustomTextBox txtCategoryName;
+        private System.Windows.Forms.Label label3;
     }
 }

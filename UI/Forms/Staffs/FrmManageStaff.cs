@@ -80,7 +80,20 @@ namespace Toomeet_Pos.UI.Forms
                 });
             }
 
+            if (dgStaffData.Count <= 0)
+            {
+                Controls.Add(btnAddStaff2);
+                btnAddStaff2.Visible = true;
+            }else
+            {
+                Controls.Remove(btnAddStaff2);
+                btnAddStaff2.Visible = false;
+
+            }
+
             dgStaffList.DataSource = dgStaffData;
+
+            
 
             dgStaffList.Columns[0].HeaderText = "Mã nhân viên";
             dgStaffList.Columns[1].HeaderText = "Họ và tên";
@@ -90,7 +103,7 @@ namespace Toomeet_Pos.UI.Forms
             dgStaffList.Columns[5].HeaderText = "Vai trò";
 
 
-            dgStaffList.Rows[0].Selected = true;
+            if (dgStaffList.Rows.Count > 0) dgStaffList.Rows[0].Selected = true;
 
             LoadSelectedStaffInfo();
         }
@@ -117,9 +130,21 @@ namespace Toomeet_Pos.UI.Forms
 
         private void LoadSelectedStaffInfo ()
         {
+
+
             Staff selectedStaff = GetSelectedStaff();
 
             if (selectedStaff == null) return;
+
+
+            if (selectedStaff.Status.Equals(StaffStatus.RESIGNED))
+            {
+                btnDismissal.Visible = false;
+            }else
+            {
+                btnDismissal.Visible = true;
+            }
+
 
             string gender = "Khác";
 

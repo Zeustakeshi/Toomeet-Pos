@@ -34,10 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageStaff));
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
             this.btnAddStaff = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnViewRoles = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -59,47 +55,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnUploadImage = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgStaffList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2Panel1.SuspendLayout();
+            this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnUploadImage = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnAddStaff2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStaffList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.controlBoxGroup1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.guna2Panel1.Size = new System.Drawing.Size(1355, 46);
-            this.guna2Panel1.TabIndex = 16;
-            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmTileMouseDown);
-            // 
-            // controlBoxGroup1
-            // 
-            this.controlBoxGroup1.Location = new System.Drawing.Point(13, 13);
-            this.controlBoxGroup1.Name = "controlBoxGroup1";
-            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
-            this.controlBoxGroup1.TabIndex = 1;
             // 
             // btnAddStaff
             // 
@@ -114,7 +88,7 @@
             this.btnAddStaff.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
             this.btnAddStaff.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddStaff.ForeColor = System.Drawing.Color.White;
-            this.btnAddStaff.Location = new System.Drawing.Point(1163, 68);
+            this.btnAddStaff.Location = new System.Drawing.Point(1162, 21);
             this.btnAddStaff.Name = "btnAddStaff";
             this.btnAddStaff.Size = new System.Drawing.Size(167, 44);
             this.btnAddStaff.TabIndex = 17;
@@ -136,7 +110,7 @@
             this.btnViewRoles.FillColor2 = System.Drawing.Color.Transparent;
             this.btnViewRoles.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnViewRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.btnViewRoles.Location = new System.Drawing.Point(974, 68);
+            this.btnViewRoles.Location = new System.Drawing.Point(977, 21);
             this.btnViewRoles.Name = "btnViewRoles";
             this.btnViewRoles.Size = new System.Drawing.Size(165, 44);
             this.btnViewRoles.TabIndex = 18;
@@ -153,11 +127,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 599F));
             this.tableLayoutPanel1.Controls.Add(this.guna2ShadowPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2ShadowPanel2, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(33, 136);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 83);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1296, 626);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1331, 679);
             this.tableLayoutPanel1.TabIndex = 24;
             // 
             // guna2ShadowPanel1
@@ -182,13 +156,13 @@
             this.guna2ShadowPanel1.Controls.Add(this.label1);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(700, 3);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(735, 3);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.guna2ShadowPanel1.ShadowDepth = 50;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(593, 620);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(593, 673);
             this.guna2ShadowPanel1.TabIndex = 21;
             // 
             // lbDescError
@@ -215,7 +189,7 @@
             this.btnDismissal.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(29)))), ((int)(((byte)(72)))));
             this.btnDismissal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDismissal.ForeColor = System.Drawing.Color.White;
-            this.btnDismissal.Location = new System.Drawing.Point(217, 552);
+            this.btnDismissal.Location = new System.Drawing.Point(217, 605);
             this.btnDismissal.Name = "btnDismissal";
             this.btnDismissal.Size = new System.Drawing.Size(167, 44);
             this.btnDismissal.TabIndex = 19;
@@ -235,7 +209,7 @@
             this.btnUpdate.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(402, 552);
+            this.btnUpdate.Location = new System.Drawing.Point(402, 605);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(167, 44);
             this.btnUpdate.TabIndex = 18;
@@ -397,41 +371,6 @@
             this.guna2Panel12.Size = new System.Drawing.Size(198, 131);
             this.guna2Panel12.TabIndex = 20;
             // 
-            // pictureBoxAvatar
-            // 
-            this.pictureBoxAvatar.BorderRadius = 10;
-            this.pictureBoxAvatar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxAvatar.ErrorImage = global::Toomeet_Pos.Properties.Resources.default_avatar;
-            this.pictureBoxAvatar.Image = global::Toomeet_Pos.Properties.Resources.default_avatar;
-            this.pictureBoxAvatar.ImageRotate = 0F;
-            this.pictureBoxAvatar.Location = new System.Drawing.Point(10, 10);
-            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
-            this.pictureBoxAvatar.Size = new System.Drawing.Size(178, 111);
-            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxAvatar.TabIndex = 1;
-            this.pictureBoxAvatar.TabStop = false;
-            // 
-            // btnUploadImage
-            // 
-            this.btnUploadImage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnUploadImage.BorderRadius = 10;
-            this.btnUploadImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUploadImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUploadImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUploadImage.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUploadImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUploadImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.btnUploadImage.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
-            this.btnUploadImage.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUploadImage.ForeColor = System.Drawing.Color.White;
-            this.btnUploadImage.Image = global::Toomeet_Pos.Properties.Resources.cloud_computing1;
-            this.btnUploadImage.Location = new System.Drawing.Point(7, 152);
-            this.btnUploadImage.Name = "btnUploadImage";
-            this.btnUploadImage.Size = new System.Drawing.Size(208, 38);
-            this.btnUploadImage.TabIndex = 19;
-            this.btnUploadImage.Text = "Tải ảnh";
-            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -445,6 +384,7 @@
             // guna2ShadowPanel2
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel2.Controls.Add(this.btnAddStaff2);
             this.guna2ShadowPanel2.Controls.Add(this.btnSearch);
             this.guna2ShadowPanel2.Controls.Add(this.txtSearch);
             this.guna2ShadowPanel2.Controls.Add(this.dgStaffList);
@@ -457,7 +397,7 @@
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.guna2ShadowPanel2.ShadowDepth = 50;
             this.guna2ShadowPanel2.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel2.Size = new System.Drawing.Size(691, 620);
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(726, 673);
             this.guna2ShadowPanel2.TabIndex = 20;
             // 
             // btnSearch
@@ -473,44 +413,12 @@
             this.btnSearch.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(601, 65);
+            this.btnSearch.Location = new System.Drawing.Point(636, 65);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(67, 35);
             this.btnSearch.TabIndex = 23;
             this.btnSearch.Text = "Lọc";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.BorderRadius = 10;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::Toomeet_Pos.Properties.Resources.search_ico;
-            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.txtSearch.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txtSearch.IconRightOffset = new System.Drawing.Point(20, 20);
-            this.txtSearch.IconRightSize = new System.Drawing.Size(5, 5);
-            this.txtSearch.Location = new System.Drawing.Point(18, 65);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Nhập tên nhân viên";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(565, 35);
-            this.txtSearch.TabIndex = 22;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgStaffList
             // 
@@ -559,7 +467,7 @@
             this.dgStaffList.RowHeadersVisible = false;
             this.dgStaffList.RowHeadersWidth = 51;
             this.dgStaffList.RowTemplate.Height = 60;
-            this.dgStaffList.Size = new System.Drawing.Size(650, 475);
+            this.dgStaffList.Size = new System.Drawing.Size(685, 528);
             this.dgStaffList.TabIndex = 21;
             this.dgStaffList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.FeterRiver;
             this.dgStaffList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
@@ -598,6 +506,102 @@
             this.label3.Text = "Tất cả nhân viên";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // pictureBoxAvatar
+            // 
+            this.pictureBoxAvatar.BorderRadius = 10;
+            this.pictureBoxAvatar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxAvatar.ErrorImage = global::Toomeet_Pos.Properties.Resources.default_avatar;
+            this.pictureBoxAvatar.Image = global::Toomeet_Pos.Properties.Resources.default_avatar;
+            this.pictureBoxAvatar.ImageRotate = 0F;
+            this.pictureBoxAvatar.Location = new System.Drawing.Point(10, 10);
+            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
+            this.pictureBoxAvatar.Size = new System.Drawing.Size(178, 111);
+            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAvatar.TabIndex = 1;
+            this.pictureBoxAvatar.TabStop = false;
+            // 
+            // btnUploadImage
+            // 
+            this.btnUploadImage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnUploadImage.BorderRadius = 10;
+            this.btnUploadImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUploadImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUploadImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUploadImage.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUploadImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUploadImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnUploadImage.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
+            this.btnUploadImage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUploadImage.ForeColor = System.Drawing.Color.White;
+            this.btnUploadImage.Image = global::Toomeet_Pos.Properties.Resources.cloud_computing1;
+            this.btnUploadImage.Location = new System.Drawing.Point(7, 152);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(208, 38);
+            this.btnUploadImage.TabIndex = 19;
+            this.btnUploadImage.Text = "Tải ảnh";
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeft = global::Toomeet_Pos.Properties.Resources.search_ico;
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.txtSearch.IconRightOffset = new System.Drawing.Point(20, 20);
+            this.txtSearch.IconRightSize = new System.Drawing.Size(5, 5);
+            this.txtSearch.Location = new System.Drawing.Point(18, 65);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "Nhập tên nhân viên";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(600, 35);
+            this.txtSearch.TabIndex = 22;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // btnAddStaff2
+            // 
+            this.btnAddStaff2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddStaff2.BorderRadius = 10;
+            this.btnAddStaff2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddStaff2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddStaff2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddStaff2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddStaff2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddStaff2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnAddStaff2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
+            this.btnAddStaff2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddStaff2.ForeColor = System.Drawing.Color.White;
+            this.btnAddStaff2.Image = global::Toomeet_Pos.Properties.Resources.plus_ico;
+            this.btnAddStaff2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddStaff2.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnAddStaff2.Location = new System.Drawing.Point(277, 316);
+            this.btnAddStaff2.Name = "btnAddStaff2";
+            this.btnAddStaff2.Size = new System.Drawing.Size(210, 44);
+            this.btnAddStaff2.TabIndex = 25;
+            this.btnAddStaff2.Text = "Thêm nhân viên";
+            this.btnAddStaff2.Click += new System.EventHandler(this.btnAddStaff_Click);
+            // 
             // FrmManageStaff
             // 
             this.AcceptButton = this.btnSearch;
@@ -608,7 +612,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnViewRoles);
             this.Controls.Add(this.btnAddStaff);
-            this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmManageStaff";
@@ -616,53 +619,52 @@
             this.Text = "FrmTemplate";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmManageStaff_Load);
-            this.guna2Panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
             this.guna2ShadowPanel2.ResumeLayout(false);
             this.guna2ShadowPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStaffList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2ResizeForm guna2ResizeForm1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private UC.ControlBoxGroupMacOs controlBoxGroup1;
-        private Guna.UI2.WinForms.Guna2GradientButton btnViewRoles;
+
         private Guna.UI2.WinForms.Guna2GradientButton btnAddStaff;
+        private Guna.UI2.WinForms.Guna2GradientButton btnViewRoles;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
-        private Guna.UI2.WinForms.Guna2GradientButton btnSearch;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private Guna.UI2.WinForms.Guna2DataGridView dgStaffList;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
-        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxAvatar;
-        private Guna.UI2.WinForms.Guna2GradientButton btnUploadImage;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2TextBox txtDesc;
+        private System.Windows.Forms.Label lbDescError;
+        private Guna.UI2.WinForms.Guna2GradientButton btnDismissal;
+        private Guna.UI2.WinForms.Guna2GradientButton btnUpdate;
         private System.Windows.Forms.Label lbPhone;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Label lbAge;
         private System.Windows.Forms.Label lbGender;
         private System.Windows.Forms.Label lbName;
-        private Guna.UI2.WinForms.Guna2GradientButton btnUpdate;
-        private Guna.UI2.WinForms.Guna2GradientButton btnDismissal;
-        private System.Windows.Forms.Label lbDescError;
+        private Guna.UI2.WinForms.Guna2TextBox txtDesc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxAvatar;
+        private Guna.UI2.WinForms.Guna2GradientButton btnUploadImage;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
+        private Guna.UI2.WinForms.Guna2GradientButton btnSearch;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2DataGridView dgStaffList;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2ResizeForm guna2ResizeForm1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnAddStaff2;
     }
 }

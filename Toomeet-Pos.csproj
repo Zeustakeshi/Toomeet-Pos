@@ -149,7 +149,7 @@
     <Compile Include="DTOs\ChangePasswordDto.cs" />
     <Compile Include="DTOs\InviteStaffMailDto.cs" />
     <Compile Include="DTOs\NewBrandDto.cs" />
-    <Compile Include="DTOs\NewCategoryDto.cs" />
+    <Compile Include="DTOs\SaveCategoryDto.cs" />
     <Compile Include="DTOs\NewProductDto.cs" />
     <Compile Include="DTOs\NewStaffDto.cs" />
     <Compile Include="DTOs\NewStoreDto.cs" />
@@ -167,9 +167,9 @@
     <Compile Include="Entites\Roles\RoleStaff.cs" />
     <Compile Include="Entites\Staff.cs" />
     <Compile Include="Entites\Store.cs" />
-    <Compile Include="Migrations\202405100325324_Initial.cs" />
-    <Compile Include="Migrations\202405100325324_Initial.designer.cs">
-      <DependentUpon>202405100325324_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202405131500157_Initial.cs" />
+    <Compile Include="Migrations\202405131500157_Initial.designer.cs">
+      <DependentUpon>202405131500157_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -240,17 +240,29 @@
     <Compile Include="UI\Forms\Overview\FrmOverview.Designer.cs">
       <DependentUpon>FrmOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Forms\Products\FrmAddBrand.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Forms\Products\FrmAddBrand.Designer.cs">
-      <DependentUpon>FrmAddBrand.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Forms\Products\FrmAddCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Forms\Products\FrmAddCategory.Designer.cs">
       <DependentUpon>FrmAddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Forms\Products\FrmManageProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\Products\FrmManageProducts.Designer.cs">
+      <DependentUpon>FrmManageProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Forms\Products\FrmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\Products\FrmProduct.Designer.cs">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Forms\Products\FrmManageProductCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\Products\FrmManageProductCategory.Designer.cs">
+      <DependentUpon>FrmManageProductCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Forms\Products\FrmAddProduct.cs">
       <SubType>Form</SubType>
@@ -258,11 +270,11 @@
     <Compile Include="UI\Forms\Products\FrmAddProduct.Designer.cs">
       <DependentUpon>FrmAddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Forms\Products\FrmProduct.cs">
+    <Compile Include="UI\Forms\Products\FrmAddBrand.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Forms\Products\FrmProduct.Designer.cs">
-      <DependentUpon>FrmProduct.cs</DependentUpon>
+    <Compile Include="UI\Forms\Products\FrmAddBrand.Designer.cs">
+      <DependentUpon>FrmAddBrand.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Forms\Settings\FrmSetting.cs">
       <SubType>Form</SubType>
@@ -362,12 +374,15 @@
     </Compile>
     <Compile Include="UI\Validations\AuthValidate.cs" />
     <Compile Include="UI\Validations\BaseValidation.cs" />
+    <Compile Include="UI\Validations\BrandValidate.cs" />
+    <Compile Include="UI\Validations\CategoryValidate.cs" />
+    <Compile Include="UI\Validations\ProductValidate.cs" />
     <Compile Include="UI\Validations\RoleValidate.cs" />
     <Compile Include="UI\Validations\StaffValidate.cs" />
     <Compile Include="UI\Validations\StoreValidate.cs" />
     <Compile Include="UI\Validations\ValidateResult.cs" />
-    <EmbeddedResource Include="Migrations\202405100325324_Initial.resx">
-      <DependentUpon>202405100325324_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202405131500157_Initial.resx">
+      <DependentUpon>202405131500157_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -412,17 +427,23 @@
     <EmbeddedResource Include="UI\Forms\Overview\FrmOverview.resx">
       <DependentUpon>FrmOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\Products\FrmAddBrand.resx">
-      <DependentUpon>FrmAddBrand.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\Products\FrmAddCategory.resx">
       <DependentUpon>FrmAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\Products\FrmManageProducts.resx">
+      <DependentUpon>FrmManageProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\Products\FrmProduct.resx">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\Products\FrmManageProductCategory.resx">
+      <DependentUpon>FrmManageProductCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\Products\FrmAddProduct.resx">
       <DependentUpon>FrmAddProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\Products\FrmProduct.resx">
-      <DependentUpon>FrmProduct.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Forms\Products\FrmAddBrand.resx">
+      <DependentUpon>FrmAddBrand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\Settings\FrmSetting.resx">
       <DependentUpon>FrmSetting.cs</DependentUpon>
@@ -566,6 +587,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\employee_group_ico.png" />
+    <None Include="Resources\download_icon4.png" />
+    <None Include="Resources\plus_ico.png" />
+    <None Include="Resources\product_default_image.png" />
+    <None Include="Resources\store_image.png" />
     <Content Include="Templates\NewStaffEmailTemplate.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

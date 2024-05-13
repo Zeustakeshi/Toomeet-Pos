@@ -13,7 +13,7 @@ namespace Toomeet_Pos.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202405100325324_Initial"; }
+            get { return "202405131500157_Initial"; }
         }
         
         string IMigrationMetadata.Source

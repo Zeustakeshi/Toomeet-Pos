@@ -16,6 +16,8 @@
                         Description = c.String(),
                         Image = c.String(),
                         StoreId = c.Long(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdatedAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("public.Stores", t => t.StoreId, cascadeDelete: true)
@@ -34,7 +36,7 @@
                         RetailPrice = c.Double(nullable: false),
                         BulkPurchasePrice = c.Double(nullable: false),
                         PurchasePrice = c.Double(nullable: false),
-                        Image = c.String(),
+                        Image = c.Binary(),
                         CostPrice = c.Double(nullable: false),
                         InventoryQuantity = c.Int(nullable: false),
                         CustomAttribute1 = c.String(),
@@ -45,7 +47,7 @@
                         CreatedAt = c.DateTime(nullable: false),
                         UpdatedAt = c.DateTime(nullable: false),
                         Brand_Id = c.Long(),
-                        Category_Id = c.Long(nullable: false),
+                        Category_Id = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.SkuCode, t.StoreId })
                 .ForeignKey("public.Brands", t => t.Brand_Id)
@@ -59,10 +61,12 @@
                 "public.Categories",
                 c => new
                     {
-                        Id = c.Long(nullable: false, identity: true),
+                        Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(),
                         Description = c.String(),
                         StoreId = c.Long(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdatedAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("public.Stores", t => t.StoreId, cascadeDelete: true)
@@ -122,15 +126,15 @@
                         Name = c.String(nullable: false, maxLength: 50),
                         Description = c.String(maxLength: 200),
                         StoreId = c.Long(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdatedAt = c.DateTime(nullable: false),
                         Customer_Id = c.Long(nullable: false),
                         InvetoryInspection_Id = c.Long(nullable: false),
                         Manage_Id = c.Long(nullable: false),
                         Order_Id = c.Long(nullable: false),
                         Product_Id = c.Long(nullable: false),
                         Staff_Id = c.Long(nullable: false),
-                        CreatedAt = c.DateTime(nullable: false),
-                        UpdatedAt = c.DateTime(nullable: false),
-                })
+                    })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("public.RoleCustomers", t => t.Customer_Id, cascadeDelete: true)
                 .ForeignKey("public.RoleInvetoryInspections", t => t.InvetoryInspection_Id, cascadeDelete: true)

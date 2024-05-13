@@ -11,7 +11,6 @@ namespace Toomeet_Pos.Entites.Products
     public class Product : BaseEntity
     {
 
-
         [Key, Column(Order = 1)]
         public string SkuCode { get; set; }
 
@@ -42,7 +41,7 @@ namespace Toomeet_Pos.Entites.Products
         [Range(0.1, double.MaxValue)]
         public double PurchasePrice { get; set; }
 
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
 
         [Required]
         [Range(0.1, double.MaxValue)]

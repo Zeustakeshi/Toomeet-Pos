@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Toomeet_Pos.Entites.Products
 {
-    public class Brand
+    public class Brand : BaseEntity
     {
         [Key]
         public long Id { get; set; }

@@ -83,6 +83,9 @@ namespace Toomeet_Pos
             services.AddSingleton<IStaffValidate, StaffValidate>();
             services.AddSingleton<IStoreValidate, StoreValidate>();
             services.AddSingleton<IRoleValidate, RoleValidate>();
+            services.AddSingleton<ICategoryValidate, CategoryValidate>();
+            services.AddSingleton<IBrandValidate, BrandValidate>();
+            services.AddSingleton<IProductValidate, ProductValidate>();
         }
 
       

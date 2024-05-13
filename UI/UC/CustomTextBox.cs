@@ -14,7 +14,7 @@ namespace Toomeet_Pos.UI.UC
     [DefaultEvent(nameof(ValueChange))]
     public partial class CustomTextBox : UserControl
     {
-
+        
 
         public CustomTextBox()
         {
@@ -29,6 +29,22 @@ namespace Toomeet_Pos.UI.UC
             get => mainTextbox.Text;
             set => mainTextbox.Text = value;
         }
+
+        [Browsable(true)]
+        public bool TextAreaMode
+        {
+            get => mainTextbox.Multiline;
+            set => mainTextbox.Multiline = value;
+        }
+
+
+        [Browsable(true)]
+        public Size TextBoxSize
+        {
+            get => mainTextbox.Size;
+            set => mainTextbox.Size = value;
+        }
+
 
         [Browsable(true)]
         public string Label

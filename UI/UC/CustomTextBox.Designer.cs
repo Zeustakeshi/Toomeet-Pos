@@ -48,6 +48,7 @@
             // 
             // lbErrorMessage
             // 
+            this.lbErrorMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbErrorMessage.AutoSize = true;
             this.lbErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbErrorMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(29)))), ((int)(((byte)(72)))));
@@ -59,7 +60,8 @@
             // 
             // mainTextbox
             // 
-            this.mainTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.mainTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainTextbox.BorderRadius = 10;
             this.mainTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -74,6 +76,7 @@
             this.mainTextbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.mainTextbox.Location = new System.Drawing.Point(21, 35);
             this.mainTextbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mainTextbox.MinimumSize = new System.Drawing.Size(0, 40);
             this.mainTextbox.Name = "mainTextbox";
             this.mainTextbox.PasswordChar = '\0';
             this.mainTextbox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
