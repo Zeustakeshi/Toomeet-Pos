@@ -37,6 +37,13 @@ namespace Toomeet_Pos.UI.UC
             set => mainTextbox.Multiline = value;
         }
 
+        [Browsable(true)]
+        public bool ReadOnly
+        {
+            get => mainTextbox.ReadOnly;
+            set => mainTextbox.ReadOnly = value;
+        }
+
 
         [Browsable(true)]
         public Size TextBoxSize

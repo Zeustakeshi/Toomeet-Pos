@@ -12,5 +12,8 @@ namespace Toomeet_Pos.DAL.Interfaces
         List<Brand> GetAllBrandByStoreId (long storeId);
 
         Brand SaveBrand(Brand brand);
+
+        Brand GetBrandByNameAndStoreId(string name, long storeId);
+
     }
 }

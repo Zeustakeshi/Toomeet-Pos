@@ -17,8 +17,10 @@ namespace Toomeet_Pos.BLL.Interfaces
         Category UpdateCategory(SaveCategoryDto dto);
 
 
+        Category GetCategoryByCodeAndStoreId(string code, long storeId);
+
         Category UpsertCategory(SaveCategoryDto dto);
 
-        void DeleteCategoryById (string categoryId);
+        void DeleteCategoryByCodeAndStoreId (string code, long storeId);
     }
 }

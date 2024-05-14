@@ -227,6 +227,7 @@ namespace Toomeet_Pos.UI.Forms
             _product.Status = ProductStatus.AVAILABLE;
             _product.BulkPurchasePrice = bulkPurchasePrice;
             _product.PurchasePrice = purchasePrice;
+            _product.UnitOfMeasure = unitOfMeasure;
             _product.CostPrice = costPrice;
             _product.RetailPrice = retailPrice;
             _product.Category = category;
@@ -247,6 +248,7 @@ namespace Toomeet_Pos.UI.Forms
             try
             {
                 _productService.CreateProduct(dto);
+                Close();
             }
             catch (DbEntityValidationException ex)
             {

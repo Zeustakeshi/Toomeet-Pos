@@ -15,5 +15,9 @@ namespace Toomeet_Pos.DAL.Interfaces
 
         List<Product> GetAllProductByStoreId(long storeId);
 
+        List<Product> GetProductByKeyword(string keyword);
+
+        void DeleteProduct (Product product);
+
     }
 }

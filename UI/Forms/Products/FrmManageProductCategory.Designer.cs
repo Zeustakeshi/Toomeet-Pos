@@ -29,32 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageProductCategory));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.txtCategoryDesc = new Toomeet_Pos.UI.UC.CustomTextBox();
             this.btnDelete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.txtCategoryId = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.txtCategoryName = new Toomeet_Pos.UI.UC.CustomTextBox();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgCategories = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCategoryDesc = new Toomeet_Pos.UI.UC.CustomTextBox();
-            this.txtCategoryId = new Toomeet_Pos.UI.UC.CustomTextBox();
-            this.txtCategoryName = new Toomeet_Pos.UI.UC.CustomTextBox();
-            this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
+            this.dgCategories = new Toomeet_Pos.UI.UC.CustomDataGridView();
             this.guna2Panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCategories)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -73,6 +68,13 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1339, 46);
             this.guna2Panel1.TabIndex = 16;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmTileMouseDown);
+            // 
+            // controlBoxGroup1
+            // 
+            this.controlBoxGroup1.Location = new System.Drawing.Point(13, 13);
+            this.controlBoxGroup1.Name = "controlBoxGroup1";
+            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
+            this.controlBoxGroup1.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -109,6 +111,23 @@
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(456, 666);
             this.guna2ShadowPanel1.TabIndex = 21;
+            // 
+            // txtCategoryDesc
+            // 
+            this.txtCategoryDesc.ErrorMessage = "";
+            this.txtCategoryDesc.IsPassword = false;
+            this.txtCategoryDesc.Label = "Ghi Chú";
+            this.txtCategoryDesc.Location = new System.Drawing.Point(18, 247);
+            this.txtCategoryDesc.Name = "txtCategoryDesc";
+            this.txtCategoryDesc.ReadOnly = false;
+            this.txtCategoryDesc.Required = true;
+            this.txtCategoryDesc.Size = new System.Drawing.Size(421, 233);
+            this.txtCategoryDesc.TabIndex = 25;
+            this.txtCategoryDesc.TextAreaMode = true;
+            this.txtCategoryDesc.TextboxPlaceholder = "Ghi chú loại sản phẩm";
+            this.txtCategoryDesc.TextBoxSize = new System.Drawing.Size(385, 171);
+            this.txtCategoryDesc.Value = "";
+            this.txtCategoryDesc.ValueChange += new System.EventHandler(this.txtCategoryDesc_ValueChange);
             // 
             // btnDelete
             // 
@@ -150,12 +169,46 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtCategoryId
+            // 
+            this.txtCategoryId.ErrorMessage = "";
+            this.txtCategoryId.IsPassword = false;
+            this.txtCategoryId.Label = "Mã loại sản phẩm";
+            this.txtCategoryId.Location = new System.Drawing.Point(13, 127);
+            this.txtCategoryId.Name = "txtCategoryId";
+            this.txtCategoryId.ReadOnly = false;
+            this.txtCategoryId.Required = true;
+            this.txtCategoryId.Size = new System.Drawing.Size(426, 102);
+            this.txtCategoryId.TabIndex = 22;
+            this.txtCategoryId.TextAreaMode = false;
+            this.txtCategoryId.TextboxPlaceholder = "Mã loại sản phẩm";
+            this.txtCategoryId.TextBoxSize = new System.Drawing.Size(390, 40);
+            this.txtCategoryId.Value = "";
+            this.txtCategoryId.ValueChange += new System.EventHandler(this.txtCategoryId_ValueChange);
+            // 
+            // txtCategoryName
+            // 
+            this.txtCategoryName.ErrorMessage = "";
+            this.txtCategoryName.IsPassword = false;
+            this.txtCategoryName.Label = "Tên loại sản phẩm";
+            this.txtCategoryName.Location = new System.Drawing.Point(13, 19);
+            this.txtCategoryName.Name = "txtCategoryName";
+            this.txtCategoryName.ReadOnly = false;
+            this.txtCategoryName.Required = true;
+            this.txtCategoryName.Size = new System.Drawing.Size(426, 102);
+            this.txtCategoryName.TabIndex = 21;
+            this.txtCategoryName.TextAreaMode = false;
+            this.txtCategoryName.TextboxPlaceholder = "Ví dụ: Nước suối";
+            this.txtCategoryName.TextBoxSize = new System.Drawing.Size(390, 40);
+            this.txtCategoryName.Value = "";
+            this.txtCategoryName.ValueChange += new System.EventHandler(this.txtCategoryName_ValueChange);
+            // 
             // guna2ShadowPanel2
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel2.Controls.Add(this.dgCategories);
             this.guna2ShadowPanel2.Controls.Add(this.btnSearch);
             this.guna2ShadowPanel2.Controls.Add(this.txtSearch);
-            this.guna2ShadowPanel2.Controls.Add(this.dgCategories);
             this.guna2ShadowPanel2.Controls.Add(this.label3);
             this.guna2ShadowPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.White;
@@ -218,79 +271,6 @@
             this.txtSearch.Size = new System.Drawing.Size(721, 35);
             this.txtSearch.TabIndex = 22;
             // 
-            // dgCategories
-            // 
-            this.dgCategories.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgCategories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(6)))), ((int)(((byte)(23)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgCategories.ColumnHeadersHeight = 50;
-            this.dgCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgCategories.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgCategories.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
-            this.dgCategories.Location = new System.Drawing.Point(18, 132);
-            this.dgCategories.MultiSelect = false;
-            this.dgCategories.Name = "dgCategories";
-            this.dgCategories.ReadOnly = true;
-            this.dgCategories.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgCategories.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgCategories.RowHeadersVisible = false;
-            this.dgCategories.RowHeadersWidth = 51;
-            this.dgCategories.RowTemplate.Height = 60;
-            this.dgCategories.Size = new System.Drawing.Size(806, 521);
-            this.dgCategories.TabIndex = 21;
-            this.dgCategories.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.FeterRiver;
-            this.dgCategories.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.dgCategories.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgCategories.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgCategories.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            this.dgCategories.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgCategories.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgCategories.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
-            this.dgCategories.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.dgCategories.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgCategories.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgCategories.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgCategories.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgCategories.ThemeStyle.HeaderStyle.Height = 50;
-            this.dgCategories.ThemeStyle.ReadOnly = true;
-            this.dgCategories.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            this.dgCategories.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgCategories.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgCategories.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgCategories.ThemeStyle.RowsStyle.Height = 60;
-            this.dgCategories.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            this.dgCategories.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCategories_CellContentClick);
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -304,60 +284,15 @@
             this.label3.Text = "Loại sản phẩm";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtCategoryDesc
+            // dgCategories
             // 
-            this.txtCategoryDesc.ErrorMessage = "";
-            this.txtCategoryDesc.IsPassword = false;
-            this.txtCategoryDesc.Label = "Ghi Chú";
-            this.txtCategoryDesc.Location = new System.Drawing.Point(18, 247);
-            this.txtCategoryDesc.Name = "txtCategoryDesc";
-            this.txtCategoryDesc.Required = true;
-            this.txtCategoryDesc.Size = new System.Drawing.Size(421, 233);
-            this.txtCategoryDesc.TabIndex = 25;
-            this.txtCategoryDesc.TextAreaMode = true;
-            this.txtCategoryDesc.TextboxPlaceholder = "Ghi chú loại sản phẩm";
-            this.txtCategoryDesc.TextBoxSize = new System.Drawing.Size(385, 171);
-            this.txtCategoryDesc.Value = "";
-            this.txtCategoryDesc.ValueChange += new System.EventHandler(this.txtCategoryDesc_ValueChange);
-            // 
-            // txtCategoryId
-            // 
-            this.txtCategoryId.ErrorMessage = "";
-            this.txtCategoryId.IsPassword = false;
-            this.txtCategoryId.Label = "Mã loại sản phẩm";
-            this.txtCategoryId.Location = new System.Drawing.Point(13, 127);
-            this.txtCategoryId.Name = "txtCategoryId";
-            this.txtCategoryId.Required = true;
-            this.txtCategoryId.Size = new System.Drawing.Size(426, 102);
-            this.txtCategoryId.TabIndex = 22;
-            this.txtCategoryId.TextAreaMode = false;
-            this.txtCategoryId.TextboxPlaceholder = "Mã loại sản phẩm";
-            this.txtCategoryId.TextBoxSize = new System.Drawing.Size(390, 40);
-            this.txtCategoryId.Value = "";
-            this.txtCategoryId.ValueChange += new System.EventHandler(this.txtCategoryId_ValueChange);
-            // 
-            // txtCategoryName
-            // 
-            this.txtCategoryName.ErrorMessage = "";
-            this.txtCategoryName.IsPassword = false;
-            this.txtCategoryName.Label = "Tên loại sản phẩm";
-            this.txtCategoryName.Location = new System.Drawing.Point(13, 19);
-            this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Required = true;
-            this.txtCategoryName.Size = new System.Drawing.Size(426, 102);
-            this.txtCategoryName.TabIndex = 21;
-            this.txtCategoryName.TextAreaMode = false;
-            this.txtCategoryName.TextboxPlaceholder = "Ví dụ: Nước suối";
-            this.txtCategoryName.TextBoxSize = new System.Drawing.Size(390, 40);
-            this.txtCategoryName.Value = "";
-            this.txtCategoryName.ValueChange += new System.EventHandler(this.txtCategoryName_ValueChange);
-            // 
-            // controlBoxGroup1
-            // 
-            this.controlBoxGroup1.Location = new System.Drawing.Point(13, 13);
-            this.controlBoxGroup1.Name = "controlBoxGroup1";
-            this.controlBoxGroup1.Size = new System.Drawing.Size(60, 19);
-            this.controlBoxGroup1.TabIndex = 1;
+            this.dgCategories.ColumnHeaderTexts = ((System.Collections.Generic.List<string>)(resources.GetObject("dgCategories.ColumnHeaderTexts")));
+            this.dgCategories.DataSource = null;
+            this.dgCategories.Location = new System.Drawing.Point(18, 116);
+            this.dgCategories.Name = "dgCategories";
+            this.dgCategories.Size = new System.Drawing.Size(805, 536);
+            this.dgCategories.TabIndex = 24;
+            this.dgCategories.CellClick += new System.EventHandler(this.dgCategories_CellClick);
             // 
             // FrmManageProductCategory
             // 
@@ -379,7 +314,6 @@
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel2.ResumeLayout(false);
             this.guna2ShadowPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCategories)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -394,12 +328,12 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
         private Guna.UI2.WinForms.Guna2GradientButton btnSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private Guna.UI2.WinForms.Guna2DataGridView dgCategories;
         private System.Windows.Forms.Label label3;
         private UC.CustomTextBox txtCategoryId;
         private UC.CustomTextBox txtCategoryName;
         private Guna.UI2.WinForms.Guna2GradientButton btnDelete;
         private Guna.UI2.WinForms.Guna2GradientButton btnSave;
         private UC.CustomTextBox txtCategoryDesc;
+        private UC.CustomDataGridView dgCategories;
     }
 }

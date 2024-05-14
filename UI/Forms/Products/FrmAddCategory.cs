@@ -89,7 +89,7 @@ namespace Toomeet_Pos.UI.Forms
 
             Category category = new Category()
             {
-                Id = id,
+                Code = id,
                 Name = name,
                 Description = desc.Length > 0 ? desc : null
             };

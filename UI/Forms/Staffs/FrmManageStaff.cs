@@ -93,17 +93,22 @@ namespace Toomeet_Pos.UI.Forms
 
             dgStaffList.DataSource = dgStaffData;
 
+            if (dgStaffList.DataGridView.Rows.Count < 0)
+            {
+                return;
+            }
+
+            dgStaffList.ColumnHeaderTexts = new List<string>()
+            {
+                "Mã nhân viên",
+                "Họ và tên",
+                "Số điện thoại",
+                "Giới tính",
+                "Trạng thái",
+                "Vai trò"
+            };
             
-
-            dgStaffList.Columns[0].HeaderText = "Mã nhân viên";
-            dgStaffList.Columns[1].HeaderText = "Họ và tên";
-            dgStaffList.Columns[2].HeaderText = "Số điện thoại";
-            dgStaffList.Columns[3].HeaderText = "Giới tính";
-            dgStaffList.Columns[4].HeaderText = "Trạng thái";
-            dgStaffList.Columns[5].HeaderText = "Vai trò";
-
-
-            if (dgStaffList.Rows.Count > 0) dgStaffList.Rows[0].Selected = true;
+            dgStaffList.DataGridView.Rows[0].Selected = true;
 
             LoadSelectedStaffInfo();
         }
@@ -245,12 +250,12 @@ namespace Toomeet_Pos.UI.Forms
 
         private Staff GetSelectedStaff ()
         {
-            if (dgStaffList.SelectedRows.Count <= 0)
+            if (dgStaffList.DataGridView.SelectedRows.Count <= 0)
             {
                 return null; 
             }
 
-            DataGridViewRow selectedRow = dgStaffList.SelectedRows[0];
+            DataGridViewRow selectedRow = dgStaffList.DataGridView.SelectedRows[0];
 
             string staffId = selectedRow?.Cells["Id"]?.Value?.ToString();
 
@@ -267,11 +272,7 @@ namespace Toomeet_Pos.UI.Forms
 
         }
 
-        private void dgStaffList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            LoadSelectedStaffInfo();
-        }
-
+  
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             string desc = txtDesc.Text;
@@ -406,6 +407,11 @@ namespace Toomeet_Pos.UI.Forms
             Hide();
             frmManageRole.ShowDialog();
             Show();
+        }
+
+        private void dgStaffList_CellClick(object sender, EventArgs e)
+        {
+            LoadSelectedStaffInfo();
         }
     }
 }

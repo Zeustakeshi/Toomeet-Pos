@@ -29,6 +29,34 @@ namespace Toomeet_Pos.BLL
         }
 
 
+        public List<Product> SearchProduct(string keyword)
+        {
+            return _productRepository.GetProductByKeyword(keyword.ToLower());
+        }
+
+
+        public void DeleteProduct (Product product, Staff staff)
+        {
+            if (!_roleService.CanDeleteProduct(staff))
+            {
+                throw new Exception("Bạn không có quyền xóa sản phẩm này");
+            }
+
+            Product existedProduct = GetProductByProductId(new ProductId()
+            {
+                SkuCode = product.SkuCode,
+                StoreId = product.StoreId
+            });
+            if (existedProduct == null)
+            {
+                throw new Exception("Không tìm thấy sản phẩm này");
+            }
+
+             _productRepository.DeleteProduct(existedProduct);
+
+        }
+
+
         public Product CreateProduct (NewProductDto dto)
         {
 

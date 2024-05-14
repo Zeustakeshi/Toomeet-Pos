@@ -44,11 +44,23 @@ namespace Toomeet_Pos.BLL
                 throw new Exception("Nhân viên " + staff.Name + " không có quyền tạo nhãn hiệu mới");
             }
 
+            Brand existedBrand = GetBrandByNameAndStoreId(newBrand.Name, store.Id);
+
+            if (existedBrand != null)
+            {
+                throw new Exception("Nhãn hiệu đã tồn tại trong cửa hàng của bạn");
+            }
+
             newBrand.Store = store;
             newBrand.StoreId = store.Id;
 
             return _brandRepository.SaveBrand(newBrand);
 
+        }
+
+        public Brand GetBrandByNameAndStoreId (string name, long storeId)
+        {
+            return _brandRepository.GetBrandByNameAndStoreId(name, storeId);
         }
     }
 }

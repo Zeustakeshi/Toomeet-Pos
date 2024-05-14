@@ -167,9 +167,21 @@
     <Compile Include="Entites\Roles\RoleStaff.cs" />
     <Compile Include="Entites\Staff.cs" />
     <Compile Include="Entites\Store.cs" />
-    <Compile Include="Migrations\202405131500157_Initial.cs" />
-    <Compile Include="Migrations\202405131500157_Initial.designer.cs">
-      <DependentUpon>202405131500157_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202405140749368_Initial.cs" />
+    <Compile Include="Migrations\202405140749368_Initial.designer.cs">
+      <DependentUpon>202405140749368_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405140807150_Initial1.cs" />
+    <Compile Include="Migrations\202405140807150_Initial1.designer.cs">
+      <DependentUpon>202405140807150_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405140818184_Initial2.cs" />
+    <Compile Include="Migrations\202405140818184_Initial2.designer.cs">
+      <DependentUpon>202405140818184_Initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405141001470_Initial3.cs" />
+    <Compile Include="Migrations\202405141001470_Initial3.designer.cs">
+      <DependentUpon>202405141001470_Initial3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -360,6 +372,12 @@
     <Compile Include="UI\UC\CustomCheckbox.Designer.cs">
       <DependentUpon>CustomCheckbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UC\CustomDataGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UC\CustomDataGridView.Designer.cs">
+      <DependentUpon>CustomDataGridView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UC\CustomTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -381,8 +399,17 @@
     <Compile Include="UI\Validations\StaffValidate.cs" />
     <Compile Include="UI\Validations\StoreValidate.cs" />
     <Compile Include="UI\Validations\ValidateResult.cs" />
-    <EmbeddedResource Include="Migrations\202405131500157_Initial.resx">
-      <DependentUpon>202405131500157_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202405140749368_Initial.resx">
+      <DependentUpon>202405140749368_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405140807150_Initial1.resx">
+      <DependentUpon>202405140807150_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405140818184_Initial2.resx">
+      <DependentUpon>202405140818184_Initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405141001470_Initial3.resx">
+      <DependentUpon>202405141001470_Initial3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -486,6 +513,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UC\CustomCheckbox.resx">
       <DependentUpon>CustomCheckbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UC\CustomDataGridView.resx">
+      <DependentUpon>CustomDataGridView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UC\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>

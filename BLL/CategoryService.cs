@@ -45,10 +45,27 @@ namespace Toomeet_Pos.BLL
                 throw new Exception(staff.Name + " không có quyền tạo loại sản phẩm");
             }
 
-            category.Store = store;
-            category.StoreId = store.Id;
+            Category existedCategoryByCode = GetCategoryByCodeAndStoreId(category.Code, category.StoreId);
+           
+            if (existedCategoryByCode != null)
+            {
+                throw new Exception("Mã Loại sản phẩm đã tồn tại");
+            }
 
-            return _categoryRepository.SaveCategory(category);
+            Category existedCategoryByName = _categoryRepository.GetCategoryByNameAndStoreId(category.Name, category.StoreId);
+
+            if (existedCategoryByName != null)
+            {
+                throw new Exception("Tên Loại sản phẩm đã tồn tại");
+            }
+
+            return _categoryRepository.SaveCategory(new Category()
+           {
+               Name = category.Name,
+               Code = category.Code,
+               StoreId = store.Id,
+               Store = store
+           });
 
 
         }
@@ -69,13 +86,23 @@ namespace Toomeet_Pos.BLL
                 throw new Exception(staff.Name + " không có quyền cập nhật loại sản phẩm");
             }
 
-            return _categoryRepository.UpdateCategory(dto.Category);
+            Category existedCategory = GetCategoryByCodeAndStoreId(category.Code, category.StoreId);
+
+            if (existedCategory == null)
+            {
+                throw new Exception("Loại sản phẩm không tồn tại");
+            }
+
+            existedCategory.Name = category.Name;
+            existedCategory.Description = category.Description;
+
+            return _categoryRepository.UpdateCategory(existedCategory);
         }
 
 
-        public void DeleteCategoryById(string categoryId)
+        public void DeleteCategoryByCodeAndStoreId(string code, long storeId)
         {
-            Category category = _categoryRepository.GetCategoryById(categoryId);
+            Category category = _categoryRepository.GetCategoryByCodeAndStoreId(code, storeId);
 
             _categoryRepository.DeleteCategoryById(category);
         }
@@ -91,11 +118,23 @@ namespace Toomeet_Pos.BLL
                 throw new Exception("Không đủ thông tin để cập nhật loại sản phẩm");
             }
 
-            Category existedCategory = _categoryRepository.GetCategoryById(category.Id);
 
-            if (existedCategory != null) return UpdateCategory(dto);
-            else return CreateCategory(dto);
+            Category existedCategory = _categoryRepository.GetCategoryByCodeAndStoreId(category.Code, category.StoreId);
+
+            if (existedCategory != null)
+            {
+                return UpdateCategory(dto);
+            }
+            else
+            {
+                return CreateCategory(dto);
+            }
             
+        }
+
+        public Category GetCategoryByCodeAndStoreId(string code, long storeId)
+        {
+            return _categoryRepository.GetCategoryByCodeAndStoreId(code, storeId);
         }
 
     }

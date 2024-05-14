@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,8 +36,29 @@ namespace Toomeet_Pos.DAL.Repositories
         public List<Product> GetAllProductByStoreId(long storeId)
         {
             return _db.Product
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
                 .Where(p => p.StoreId.Equals(storeId)).ToList();
         }
 
+
+        public List<Product> GetProductByKeyword(string keyword)
+        {
+            return _db
+                .Product
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .Where(p =>
+                p.Name.ToLower().Contains(keyword) ||
+                p.SkuCode.ToLower().Contains(keyword) ||
+                p.BarCode.ToLower().Contains(keyword)
+            ).ToList();
+        }
+
+
+        public void DeleteProduct(Product product) {
+            _db.Product.Remove(product);
+            _db.SaveChanges();
+        }
     }
 }

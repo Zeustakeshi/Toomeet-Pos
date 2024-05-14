@@ -47,7 +47,7 @@
                         CreatedAt = c.DateTime(nullable: false),
                         UpdatedAt = c.DateTime(nullable: false),
                         Brand_Id = c.Long(),
-                        Category_Id = c.String(nullable: false, maxLength: 128),
+                        Category_Id = c.Long(nullable: false),
                     })
                 .PrimaryKey(t => new { t.SkuCode, t.StoreId })
                 .ForeignKey("public.Brands", t => t.Brand_Id)
@@ -61,7 +61,8 @@
                 "public.Categories",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Id = c.Long(nullable: false, identity: true),
+                        Code = c.String(nullable: false),
                         Name = c.String(),
                         Description = c.String(),
                         StoreId = c.Long(nullable: false),
@@ -70,6 +71,7 @@
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("public.Stores", t => t.StoreId, cascadeDelete: true)
+                .Index(t => t.Code, unique: true)
                 .Index(t => new { t.StoreId, t.Name }, unique: true);
             
             CreateTable(
@@ -285,6 +287,7 @@
             DropIndex("public.Stores", new[] { "Owner_Id" });
             DropIndex("public.Stores", new[] { "Name" });
             DropIndex("public.Categories", new[] { "StoreId", "Name" });
+            DropIndex("public.Categories", new[] { "Code" });
             DropIndex("public.Products", new[] { "Category_Id" });
             DropIndex("public.Products", new[] { "Brand_Id" });
             DropIndex("public.Products", new[] { "StoreId" });

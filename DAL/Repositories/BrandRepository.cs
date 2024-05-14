@@ -13,9 +13,15 @@ namespace Toomeet_Pos.DAL.Repositories
 
         private readonly AppDBContext _db;
 
+
         public BrandRepository (IDataAccessLayer dataAccess)
         {
             _db = dataAccess.GetContext();
+        }
+
+        public Brand GetBrandByNameAndStoreId(string name, long storeId)
+        {
+            return _db.Brand.FirstOrDefault(b => b.Name.Equals(name) && b.StoreId.Equals(storeId));
         }
 
         public List<Brand> GetAllBrandByStoreId(long storeId)

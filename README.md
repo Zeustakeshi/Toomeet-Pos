@@ -4,6 +4,6 @@
 Giải pháp quản lý cửa hàng tạp hóa và siêu thị mini
 
 #### Tạo tài khoản và đăng nhập
-<img src = "./Screenshots/Loading.png"/>
-<img src = "./Screenshots/Register.png"/>
-<img src = "./Screenshots/Login.png"/>
+<img src = "./Screenshots/Loading.PNG"/>
+<img src = "./Screenshots/Register.PNG"/>
+<img src = "./Screenshots/Login.PNG"/>

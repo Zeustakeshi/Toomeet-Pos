@@ -53,8 +53,6 @@ namespace Toomeet_Pos.DAL
             modelBuilder.Entity<Brand>()
              .HasIndex(b => new { b.StoreId, b.Name })
              .IsUnique(true);
-
-
         }
 
 

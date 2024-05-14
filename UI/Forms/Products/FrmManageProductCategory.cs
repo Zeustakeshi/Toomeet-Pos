@@ -87,7 +87,7 @@ namespace Toomeet_Pos.UI.Forms
                 dgCategoriesData.Add(new
                 {
                     category.Name,
-                    category.Id,
+                    category.Code,
                     category.Description,
                     category.CreatedAt
                 });
@@ -95,39 +95,42 @@ namespace Toomeet_Pos.UI.Forms
 
             dgCategories.DataSource = dgCategoriesData;
 
-       
 
 
 
-            if (dgCategories.Rows.Count > 0)
+
+            if (dgCategories.DataGridView.Rows.Count <= 0) return;
+
+
+            dgCategories.ColumnHeaderTexts = new List<string>()
             {
-                dgCategories.Columns[0].HeaderText = "Tên loại sản phẩm";
-                dgCategories.Columns[1].HeaderText = "Mã loại";
-                dgCategories.Columns[2].HeaderText = "Ghi chú";
-                dgCategories.Columns[3].HeaderText = "Ngày tạo";
-                dgCategories.Rows[0].Selected = true;
-                LoadSelectedCategoryInfo();
+                "Tên loại sản phẩm",
+                "Mã loại",
+                "Ghi chú",
+                "Ngày tạo"
+            };
 
-            }
+
+            LoadSelectedCategoryInfo();
 
         }
 
         private Category GetSelectedCategory ()
         {
-            if (dgCategories.SelectedRows.Count <= 0)
+            if (dgCategories.DataGridView.SelectedRows.Count <= 0)
             {
                 return null;
             }
 
-            DataGridViewRow selectedRow = dgCategories.SelectedRows[0];
+            DataGridViewRow selectedRow = dgCategories.DataGridView.SelectedRows[0];
 
-            string categoryId = selectedRow?.Cells["Id"]?.Value?.ToString();
+            string categoryId = selectedRow?.Cells["Code"]?.Value?.ToString();
 
             if (categoryId == null) return null;
 
             try
             {
-                return _categories.FirstOrDefault(c => c.Id.Equals(categoryId));
+                return _categories.FirstOrDefault(c => c.Code.Equals(categoryId));
             }
             catch (Exception ex)
             {
@@ -144,7 +147,7 @@ namespace Toomeet_Pos.UI.Forms
             if (selectedCategory == null) return;
 
             txtCategoryName.Value = selectedCategory.Name;
-            txtCategoryId.Value = selectedCategory.Id;
+            txtCategoryId.Value = selectedCategory.Code;
             txtCategoryDesc.Value = selectedCategory.Description;
 
         }
@@ -199,34 +202,33 @@ namespace Toomeet_Pos.UI.Forms
                 return;
             }
 
-            Category category = new Category()
-            {
-                Id = id,
-                Name = name,
-                Description = desc.Length > 0 ? desc : null
-            };
+         
+        
 
-
-            Category selectedCategory = GetSelectedCategory();
-
-            if (selectedCategory == null) return;
-
-            selectedCategory.Id = id;
-            selectedCategory.Name = name;
-            selectedCategory.Description = desc;
+         
 
             btnSave.Enabled = false;
             try
             {
-                _categoryService.UpsertCategory(
 
-                    new SaveCategoryDto ()
+             
+
+                SaveCategoryDto dto = new SaveCategoryDto()
+                {
+                    Staff = _currentStaff,
+                    Store = _store,
+                    Category = new Category()
                     {
-                       Category = selectedCategory,
-                       Staff = _currentStaff,
-                       Store = _store
+                        Name= name,
+                        Code = id,
+                        Description = desc
                     }
-                );
+                };
+
+
+                _categoryService.UpsertCategory(dto);
+
+
                 LoadAllProductCategory();
             }
             catch( Exception ex) {
@@ -236,6 +238,8 @@ namespace Toomeet_Pos.UI.Forms
                    MessageBoxButtons.OK,
                    MessageBoxIcon.Error
                );
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
             }
             btnSave.Enabled = true;
 
@@ -244,6 +248,13 @@ namespace Toomeet_Pos.UI.Forms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show(
+                "Khi xóa loại sản phẩm, tất cả sản phẩm có liên quan sẽ bị xóa theo, bạn vẫn muốn xóa?",
+                "Cảnh báo",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning
+            );
+
+            if (dialogResult == DialogResult.Cancel) return;
 
             string id = txtCategoryId.Value;
 
@@ -258,7 +269,7 @@ namespace Toomeet_Pos.UI.Forms
             btnDelete.Enabled = false;
             try
             {
-                _categoryService.DeleteCategoryById(id);
+                _categoryService.DeleteCategoryByCodeAndStoreId(id, _store.Id);
                 LoadAllProductCategory();
             }
             catch (Exception ex)
@@ -321,7 +332,9 @@ namespace Toomeet_Pos.UI.Forms
             txtCategoryDesc.ErrorMessage = "";
         }
 
-        private void dgCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+        private void dgCategories_CellClick(object sender, EventArgs e)
         {
             LoadSelectedCategoryInfo();
         }

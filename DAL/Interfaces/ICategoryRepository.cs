@@ -16,10 +16,14 @@ namespace Toomeet_Pos.DAL.Interfaces
 
         Category UpdateCategory(Category category);
 
-        Category GetCategoryById(string id);
+        Category GetCategoryByCodeAndStoreId(string code, long storeId);
 
-        bool IsExistedCategoryById(string id);
+        Category GetCategoryByNameAndStoreId(string name, long storeId);
+
+        bool IsExistedCategoryByCodeAndStoreId(string code, long storeId);
 
         void DeleteCategoryById(Category category);
+
+
     }
 }

@@ -199,5 +199,11 @@ namespace Toomeet_Pos.BLL
             Role role = _roleRepository.GetProductRoleByRoleId(staff.Role.Id);
             return role.Product.ViewProduct;
         }
+
+        public bool CanDeleteProduct (Staff staff)
+        {
+            Role role = _roleRepository.GetProductRoleByRoleId(staff.Role.Id);
+            return role.Product.DeleteProduct;
+        }
     }
 }

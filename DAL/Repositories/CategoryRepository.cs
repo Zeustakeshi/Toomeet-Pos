@@ -17,6 +17,12 @@ namespace Toomeet_Pos.DAL.Repositories
             _db = dataAccess.GetContext();
         }
 
+
+        public Category GetCategoryByNameAndStoreId(string name, long storeId)
+        {
+            return _db.Category.FirstOrDefault(c => c.Name.Equals(name) && c.StoreId.Equals(storeId));
+        }
+
         public List<Category> GetAllCategoriesByStoreId(long storeId)
         {
             return _db.Category
@@ -27,29 +33,28 @@ namespace Toomeet_Pos.DAL.Repositories
         public Category SaveCategory(Category category)
         {
             Category newCategory = _db.Category.Add(category);
-            _db.Entry(newCategory).State = System.Data.Entity.EntityState.Added;
             _db.SaveChanges();
             return newCategory;
         }
 
 
-        public Category GetCategoryById (string id)
+        public Category GetCategoryByCodeAndStoreId (string code, long storeId)
         {
-            return _db.Category.FirstOrDefault(c => c.Id.Equals(id));
+            return _db.Category.FirstOrDefault(c => c.Code.Equals(code) && c.StoreId.Equals(storeId));
         }
 
-        public bool IsExistedCategoryById (string id)
+        public bool IsExistedCategoryByCodeAndStoreId (string code, long storeId)
         {
-            return GetCategoryById(id) != null;
+            return GetCategoryByCodeAndStoreId(code, storeId) != null;
         }
 
 
         public Category UpdateCategory (Category category)
         {
 
-            if (!IsExistedCategoryById(category.Id))
+            if (!IsExistedCategoryByCodeAndStoreId(category.Code, category.StoreId))
             {
-                throw new Exception("Không tìm thấy loại sản phẩm với mã: " + category.Id + " ");
+                throw new Exception("Không tìm thấy loại sản phẩm với mã: " + category.Code + " ");
             }
 
             Category updatedCategory = _db.Category.Attach(category);
@@ -63,9 +68,9 @@ namespace Toomeet_Pos.DAL.Repositories
 
         public void DeleteCategoryById (Category category)
         {
-            if (!IsExistedCategoryById(category.Id))
+            if (!IsExistedCategoryByCodeAndStoreId(category.Code, category.StoreId))
             {
-                throw new Exception("Không tìm thấy loại sản phẩm với mã: " + category.Id + " ");
+                throw new Exception("Không tìm thấy loại sản phẩm với mã: " + category.Code + " ");
             }
 
             Category deletedCategory = _db.Category.Remove(category);
