@@ -10,6 +10,7 @@ using Toomeet_Pos.DAL.Repositories;
 using Toomeet_Pos.DTOs;
 using Toomeet_Pos.Entites;
 using Toomeet_Pos.Entites.Products;
+using Toomeet_Pos.UI.UC;
 
 namespace Toomeet_Pos.BLL
 {
@@ -18,14 +19,17 @@ namespace Toomeet_Pos.BLL
 
         private readonly IProductRepository _productRepository;
         private readonly IRoleService _roleService;
+        private readonly IExcelService _excelService;
 
         public ProductService (
             IProductRepository productRepository, 
-            IRoleService roleService
+            IRoleService roleService,
+            IExcelService excelService
         )
         {
             _productRepository = productRepository;
             _roleService = roleService;
+            _excelService = excelService;
         }
 
 
@@ -108,6 +112,16 @@ namespace Toomeet_Pos.BLL
             return GetProductByProductId(id) != null;
         }
 
+        public List<Product> GetExampleProducts ()
+        {
 
+            return new List<Product>()
+            {
+                new Product()
+                {
+                                
+                }
+            };
+        }
     }
 }

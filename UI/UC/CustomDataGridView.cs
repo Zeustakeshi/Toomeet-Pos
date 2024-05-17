@@ -28,6 +28,29 @@ namespace Toomeet_Pos.UI.UC
             get => myDataGridView;
         }
 
+        public int ColumnCount
+        {
+            get => myDataGridView.ColumnCount;
+           
+        }
+
+        public int RowCount
+        {
+            get => myDataGridView.RowCount;
+        }
+ 
+
+        public DataGridViewColumnCollection Columns
+        {
+            get => myDataGridView.Columns;
+        }
+
+
+        public DataGridViewRowCollection Rows
+        {
+            get => myDataGridView.Rows;
+        }
+
 
         [Browsable(true)]
         public List<string> ColumnHeaderTexts
@@ -80,4 +103,5 @@ namespace Toomeet_Pos.UI.UC
             OnCustomCellClick(EventArgs.Empty);
         }
     }
+
 }

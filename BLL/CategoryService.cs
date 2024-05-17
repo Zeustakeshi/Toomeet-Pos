@@ -113,6 +113,9 @@ namespace Toomeet_Pos.BLL
             Staff staff = dto.Staff;
             Category category = dto.Category;
 
+            category.Store = store;
+            category.StoreId = store.Id;
+
             if (store == null || staff == null || category == null)
             {
                 throw new Exception("Không đủ thông tin để cập nhật loại sản phẩm");

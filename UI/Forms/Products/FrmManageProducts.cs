@@ -21,6 +21,7 @@ namespace Toomeet_Pos.UI.Forms.Products
         private readonly IProductService _productService;
         private readonly IAuthService _authService;
         private readonly IImageService _imageService;
+        private readonly IExcelService _excelService;
 
         private Staff _currentStaff;
         private Store _store;
@@ -34,9 +35,20 @@ namespace Toomeet_Pos.UI.Forms.Products
             _authService = Program.GetService<IAuthService>();
             _productService = Program.GetService<IProductService>();
             _imageService = Program.GetService<IImageService>();
+            _excelService = Program.GetService<IExcelService>();
 
             _currentStaff = _authService.GetAuthenticatedStaff();
             _store = _authService.GetStoreInfo();
+
+
+            lbProductBrand.Text = "";
+            lbProductCategory.Text = "";
+            lbProductInventoryQuantity.Text = "";
+            lbProductName.Text = "";
+            lbProductRetailPrice.Text = "";
+            lbProductSkucode.Text = "";
+            lbProductUnitOfMeasure.Text = "";
+
         }
 
 
@@ -44,12 +56,16 @@ namespace Toomeet_Pos.UI.Forms.Products
         private void FrmManageProducts_Load(object sender, EventArgs e)
         {
             LoadAllPoducts();
+
+            
         }
 
         private void btnViewProductCategories_Click(object sender, EventArgs e)
         {
             FrmManageProductCategory frmManageProductCategory = new FrmManageProductCategory();
             frmManageProductCategory.ShowDialog();
+
+            LoadAllPoducts();
         }
 
         private void LoadAllPoducts()
@@ -58,6 +74,16 @@ namespace Toomeet_Pos.UI.Forms.Products
             {
                 List<Product> products = _productService.GetAllProduct(_store.Id);
                 UpdateDgProduct(products);
+
+                if (dgProducts.RowCount <= 0)
+                {
+                    btnViewProductDetail.Visible = false;
+                    btnDelete.Visible = false;
+                }else
+                {
+                    btnViewProductDetail.Visible = true;
+                    btnDelete.Visible = true;
+                }
             }
             catch (Exception ex)
             {
@@ -83,11 +109,13 @@ namespace Toomeet_Pos.UI.Forms.Products
                 dgProductData.Add(new
                 {
                     product.SkuCode,
+                    product.BarCode,
                     product.Name,
                     Brand = product.Brand.Name,
                     Category = product.Category.Name,
                     product.InventoryQuantity,
-                    product.CreatedAt
+                    product.CreatedAt,
+                    product.UpdatedAt
                 });
             }
 
@@ -107,11 +135,13 @@ namespace Toomeet_Pos.UI.Forms.Products
             dgProducts.ColumnHeaderTexts = new List<string>()
             {
                 "Mã sản phẩm",
+                "BarCode",
                 "Tên sản phẩm",
                 "Thương hiệu",
                 "Loại sản phẩm",
                 "Tồn kho",
-                "Ngày khởi tạo",
+                "Ngày tạo",
+                "Cập nhật lần cuối"
             };
 
             dgProducts.DataGridView.Rows[0].Selected = true;
@@ -196,8 +226,6 @@ namespace Toomeet_Pos.UI.Forms.Products
             try
             {
                 _productService.DeleteProduct(selectedProduct, _currentStaff);
-
-
             }
             catch (Exception ex)
             {
@@ -236,6 +264,44 @@ namespace Toomeet_Pos.UI.Forms.Products
                     MessageBoxIcon.Error
                 );
             }
+        }
+
+        private void llbViewExampleProductFile_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Title = "File excel sản phẩm mẫu";
+            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
+            saveFileDialog.FileName = saveFileDialog.FileName + "Toomeet_mau_nhap_san_pham";
+
+
+            DialogResult saveFileResult = saveFileDialog.ShowDialog();
+           
+
+
+            if (saveFileResult != DialogResult.OK) return;
+
+            try
+            {
+                _excelService.ExportExcelFile(saveFileDialog.FileName, "Danh sách sản phẩm", dgProducts);
+
+                MessageBox.Show(
+                  "Xuất file thành công",
+                  "Thành công",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information
+              );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.GetBaseException().Message,
+                    "Xuất file sản phẩm mẫu thất bại",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+               
         }
     }
 }

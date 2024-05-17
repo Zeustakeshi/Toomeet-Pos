@@ -21,5 +21,7 @@ namespace Toomeet_Pos.BLL.Interfaces
         void DeleteProduct(Product product, Staff staff);
 
         List<Product> SearchProduct(string keyword);
+
+        List<Product> GetExampleProducts();
     }
 }
