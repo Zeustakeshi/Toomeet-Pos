@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Toomeet_Pos.BLL.Interfaces
 {
     public interface IExcelService
     {
-        void ImportExcelFile(string path, CustomDataGridView dataGridView);
+        DataTable ImportExcelFile(string path);
         void ExportExcelFile(string path, string tile, CustomDataGridView dataGridView);
     }
 }

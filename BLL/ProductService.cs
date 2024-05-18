@@ -51,6 +51,8 @@ namespace Toomeet_Pos.BLL
                 SkuCode = product.SkuCode,
                 StoreId = product.StoreId
             });
+
+
             if (existedProduct == null)
             {
                 throw new Exception("Không tìm thấy sản phẩm này");
@@ -119,8 +121,111 @@ namespace Toomeet_Pos.BLL
             {
                 new Product()
                 {
-                                
-                }
+                    Name = "Nước tăng lực Sting",
+                    BarCode = "0924252526256",
+                    Brand = new Brand ()
+                    {
+                        Name = "Sting",
+                        Description = "Mô tả nhãn hiệu của nước tăng lực Sting ...."
+                    },
+                    InventoryQuantity = 100,
+                    PurchasePrice = 100,
+                    RetailPrice = 100,
+                    CostPrice = 100,
+                    SkuCode = "NC_TANG_LUC_STING",
+                    UnitOfMeasure = "Chai",
+                    Weight = 200,
+                    BulkPurchasePrice = 100,
+                    Description = "Mô tả sản phẩm ...",
+                    Category = new Category()
+                    {
+                        Code = "NUOC_GIAI_KHAC_CO_GA",
+                        Name = "Nước giải khát có ga",
+                    }
+                    ,    CreatedAt = new DateTime(2024, 2, 2),
+                    UpdatedAt = new DateTime(2004, 2, 2),
+                },
+
+                new Product()
+                {
+                    Name = "Nước suối Lavie",
+                    BarCode = "8935234523456",
+                    Brand = new Brand ()
+                    {
+                        Name = "Lavie",
+                        Description = "Mô tả nhãn hiệu của nước suối Lavie ...."
+                    },
+                    InventoryQuantity = 50,
+                    PurchasePrice = 5000,
+                    RetailPrice = 7000,
+                    CostPrice = 5000,
+                    SkuCode = "NS_LAVIE",
+                    UnitOfMeasure = "Chai",
+                    Weight = 500,
+                    BulkPurchasePrice = 4500,
+                    Description = "Mô tả sản phẩm ...",
+                    Category = new Category()
+                    {
+                        Code = "NUOC_SUOI",
+                        Name = "Nước suối"
+                    }
+                   ,    CreatedAt = new DateTime(2024, 2, 2),
+                    UpdatedAt = new DateTime(2004, 2, 2),
+                },
+
+                new Product()
+                {
+                    Name = "Nước ngọt Coca-Cola",
+                    BarCode = "3423453243234",
+                    Brand = new Brand ()
+                    {
+                        Name = "Coca-Cola",
+                        Description = "Mô tả nhãn hiệu của nước ngọt Coca-Cola ...."
+                    },
+                    InventoryQuantity = 20,
+                    PurchasePrice = 8000,
+                    RetailPrice = 10000,
+                    CostPrice = 8000,
+                    SkuCode = "NS_COCA",
+                    UnitOfMeasure = "Chai",
+                    Weight = 350,
+                    BulkPurchasePrice = 7500,
+                    Description = "Mô tả sản phẩm ...",
+                    Category = new Category()
+                    {
+                        Code = "NUOC_NGOT_CO_GA",
+                        Name = "Nước ngọt có ga"
+                    }
+                      ,    CreatedAt = new DateTime(2024, 2, 2),
+                    UpdatedAt = new DateTime(2004, 2, 2),
+                },
+
+                new Product()
+                {
+                    Name = "Sữa tươi TH True Milk",
+                    BarCode = "9876543210987",
+                    Brand = new Brand ()
+                    {
+                        Name = "TH True Milk",
+                        Description = "Mô tả nhãn hiệu của sữa tươi TH True Milk ...."
+                    },
+                    InventoryQuantity = 30,
+                    PurchasePrice = 12000,
+                    RetailPrice = 15000,
+                    CostPrice = 12000,
+                    SkuCode = "ST_TH",
+                    UnitOfMeasure = "Hộp",
+                    Weight = 1000,
+                    BulkPurchasePrice = 11000,
+                    Description = "Mô tả sản phẩm ...",
+                    Category = new Category()
+                    {
+                        Code = "SUA_TUOI",
+                        Name = "Sữa tươi"
+                    }
+                       ,    CreatedAt = new DateTime(2024, 2, 2),
+                    UpdatedAt = new DateTime(2004, 2, 2),
+                },
             };
         }
     }

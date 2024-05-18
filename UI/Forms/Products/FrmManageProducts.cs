@@ -10,8 +10,10 @@ using System.Windows.Forms;
 using Toomeet_Pos.BLL;
 using Toomeet_Pos.BLL.Interfaces;
 using Toomeet_Pos.DAL.Interfaces;
+using Toomeet_Pos.DTOs;
 using Toomeet_Pos.Entites;
 using Toomeet_Pos.Entites.Products;
+using Toomeet_Pos.UI.UC;
 
 namespace Toomeet_Pos.UI.Forms.Products
 {
@@ -22,6 +24,8 @@ namespace Toomeet_Pos.UI.Forms.Products
         private readonly IAuthService _authService;
         private readonly IImageService _imageService;
         private readonly IExcelService _excelService;
+        private readonly ICategoryService _categoryService;
+        private readonly IBrandService _brandService;
 
         private Staff _currentStaff;
         private Store _store;
@@ -36,6 +40,9 @@ namespace Toomeet_Pos.UI.Forms.Products
             _productService = Program.GetService<IProductService>();
             _imageService = Program.GetService<IImageService>();
             _excelService = Program.GetService<IExcelService>();
+            _categoryService = Program.GetService<ICategoryService>();
+            _brandService = Program.GetService<IBrandService>();
+
 
             _currentStaff = _authService.GetAuthenticatedStaff();
             _store = _authService.GetStoreInfo();
@@ -274,16 +281,48 @@ namespace Toomeet_Pos.UI.Forms.Products
             saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
             saveFileDialog.FileName = saveFileDialog.FileName + "Toomeet_mau_nhap_san_pham";
 
-
             DialogResult saveFileResult = saveFileDialog.ShowDialog();
            
-
 
             if (saveFileResult != DialogResult.OK) return;
 
             try
             {
-                _excelService.ExportExcelFile(saveFileDialog.FileName, "Danh sách sản phẩm", dgProducts);
+               
+
+                List<ProductExcelDto> exampleProducts = new List<ProductExcelDto>();
+
+                foreach (Product pd in _productService.GetExampleProducts())
+                {
+                    exampleProducts.Add(ProductExcelDto.BuildFromProduct(pd));
+                }
+
+                CustomDataGridView dgExampleProduct = new CustomDataGridView
+                {
+                    DataSource = exampleProducts
+                };
+
+                dgExampleProduct.ColumnHeaderTexts = new List<string>()
+                {
+                    "Mã sản phẩm",
+                    "Tên sản phẩm",
+                    "BarCode",
+                    "Mô tả",
+                    "Đơn vị tính",
+                    "Cân nặng",
+                    "Thương hiệu",
+                    "Loại sản phẩm",
+                    "Giá bán lẻ",
+                    "Giá bán số lượng lớn",
+                    "Giá nhập hàng",
+                    "Giá vốn",
+                    "Số lượng tồn kho",
+                    "Ngày tạo",
+                    "Cập nhật lần cuối"
+                };
+                
+
+                _excelService.ExportExcelFile(saveFileDialog.FileName, "Danh sách sản phẩm", dgExampleProduct);
 
                 MessageBox.Show(
                   "Xuất file thành công",
@@ -302,6 +341,151 @@ namespace Toomeet_Pos.UI.Forms.Products
                 );
             }
                
+        }
+
+        private void btnExportProductFile_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Title = "File excel sản phẩm";
+            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
+            saveFileDialog.FileName = saveFileDialog.FileName + "Toomeet_san_pham";
+
+            DialogResult saveFileResult = saveFileDialog.ShowDialog();
+
+            if (saveFileResult != DialogResult.OK) return;
+
+
+            try
+            {
+
+                List<ProductExcelDto> exampleProducts = new List<ProductExcelDto>();
+
+                foreach (Product pd in _products)
+                {
+                    exampleProducts.Add(ProductExcelDto.BuildFromProduct(pd));
+                }
+
+                CustomDataGridView dgExampleProduct = new CustomDataGridView
+                {
+                    DataSource = exampleProducts
+                };
+
+                dgExampleProduct.ColumnHeaderTexts = new List<string>()
+                {
+                    "Mã sản phẩm",
+                    "Tên sản phẩm",
+                    "BarCode",
+                    "Mô tả",
+                    "Đơn vị tính",
+                    "Cân nặng",
+                    "Thương hiệu",
+                    "Loại sản phẩm",
+                    "Giá bán lẻ",
+                    "Giá bán số lượng lớn",
+                    "Giá nhập hàng",
+                    "Giá vốn",
+                    "Số lượng tồn kho",
+                    "Ngày tạo",
+                    "Cập nhật lần cuối"
+                };
+
+
+                _excelService.ExportExcelFile(saveFileDialog.FileName, "Danh sách sản phẩm", dgExampleProduct);
+
+                MessageBox.Show(
+                  "Xuất file thành công",
+                  "Thành công",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information
+              );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.GetBaseException().Message,
+                    "Xuất file sản phẩm mẫu thất bại",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
+
+
+        private void btnUploadProductFile_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Title = "File excel sản phẩm";
+            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.xlsm";
+        
+            DialogResult openFileResult = openFileDialog.ShowDialog();
+
+            if (openFileResult != DialogResult.OK) return;
+
+            try
+            {
+
+                DataTable dtProducts =  _excelService.ImportExcelFile(openFileDialog.FileName);
+                _products.Clear();
+
+               
+
+                foreach (DataRow row in dtProducts.Rows)
+                {
+
+                    Brand brand = new Brand()
+                    {
+                        Name = row["Thương hiệu"].ToString(),
+                    };
+
+                    Category category = new Category()
+                    {
+                        Name = row["Loại sản phẩm"].ToString()
+                    };
+
+                    Product product = new Product
+                    {
+                        SkuCode = row["Mã sản phẩm"].ToString(),
+                        Name = row["Tên sản phẩm"].ToString(),
+                        BarCode = row["BarCode"].ToString(),
+                        Description = row["Mô tả"].ToString(),
+                        UnitOfMeasure = row["Đơn vị tính"].ToString(),
+                        Weight = Convert.ToInt32(row["Cân nặng"]),
+                        Brand = brand,
+                        Category = category,
+                        RetailPrice = Convert.ToDouble(row["Giá bán lẻ"]),
+                        BulkPurchasePrice = Convert.ToDouble(row["Giá bán số lượng lớn"]),
+                        PurchasePrice = Convert.ToDouble(row["Giá nhập hàng"]),
+                        CostPrice = Convert.ToDouble(row["Giá vốn"]),
+                        InventoryQuantity = Convert.ToInt32(row["Số lượng tồn kho"]),
+                        CreatedAt = DateTime.Parse(row["Ngày tạo"].ToString()),
+                        UpdatedAt = DateTime.Parse(row["Cập nhật lần cuối"].ToString())
+                    };
+
+
+                    _products.Add(product);
+
+                }
+
+                
+                UpdateDgProduct(_products);
+                
+                
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show(
+                   ex.GetBaseException().Message,
+                   "Nhập file sản phẩm thất bại",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error
+               );
+
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex);
+            }
         }
     }
 }

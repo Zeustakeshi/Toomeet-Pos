@@ -93,7 +93,9 @@ namespace Toomeet_Pos.DAL
 
                 if (entity.State == EntityState.Added)
                 {
-                    ((BaseEntity)entity.Entity).CreatedAt = now;
+                    BaseEntity e = (BaseEntity)entity.Entity;
+
+                   e.CreatedAt = now;
                 }
                 ((BaseEntity)entity.Entity).UpdatedAt = now;
             }

@@ -172,6 +172,7 @@
     <Compile Include="DTOs\ChangePasswordDto.cs" />
     <Compile Include="DTOs\InviteStaffMailDto.cs" />
     <Compile Include="DTOs\NewBrandDto.cs" />
+    <Compile Include="DTOs\ProductExcelDto.cs" />
     <Compile Include="DTOs\SaveCategoryDto.cs" />
     <Compile Include="DTOs\NewProductDto.cs" />
     <Compile Include="DTOs\NewStaffDto.cs" />

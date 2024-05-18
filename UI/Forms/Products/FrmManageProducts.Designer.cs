@@ -40,7 +40,6 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnAddProduct2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.dgProducts = new Toomeet_Pos.UI.UC.CustomDataGridView();
             this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -63,10 +62,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnDelete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnViewProductDetail = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtProductDesc = new Toomeet_Pos.UI.UC.CustomTextBox();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtProductDesc = new Toomeet_Pos.UI.UC.CustomTextBox();
+            this.dgProducts = new Toomeet_Pos.UI.UC.CustomDataGridView();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -177,6 +177,7 @@
             this.btnExportProductFile.Size = new System.Drawing.Size(133, 37);
             this.btnExportProductFile.TabIndex = 22;
             this.btnExportProductFile.Text = "Xuất file";
+            this.btnExportProductFile.Click += new System.EventHandler(this.btnExportProductFile_Click);
             // 
             // guna2Panel2
             // 
@@ -206,6 +207,7 @@
             this.btnUploadProductFile.Size = new System.Drawing.Size(133, 37);
             this.btnUploadProductFile.TabIndex = 20;
             this.btnUploadProductFile.Text = "Nhập file";
+            this.btnUploadProductFile.Click += new System.EventHandler(this.btnUploadProductFile_Click);
             // 
             // guna2Panel4
             // 
@@ -254,19 +256,6 @@
             this.btnAddProduct2.Name = "btnAddProduct2";
             this.btnAddProduct2.Size = new System.Drawing.Size(50, 38);
             this.btnAddProduct2.TabIndex = 27;
-            // 
-            // dgProducts
-            // 
-            this.dgProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgProducts.ColumnHeaderTexts = ((System.Collections.Generic.List<string>)(resources.GetObject("dgProducts.ColumnHeaderTexts")));
-            this.dgProducts.DataSource = null;
-            this.dgProducts.Location = new System.Drawing.Point(22, 71);
-            this.dgProducts.Name = "dgProducts";
-            this.dgProducts.Size = new System.Drawing.Size(530, 574);
-            this.dgProducts.TabIndex = 26;
-            this.dgProducts.CellClick += new System.EventHandler(this.dgProducts_CellClick);
             // 
             // btnSearch
             // 
@@ -603,22 +592,6 @@
             this.btnViewProductDetail.TabIndex = 33;
             this.btnViewProductDetail.Text = "Xem chi tiết";
             // 
-            // txtProductDesc
-            // 
-            this.txtProductDesc.ErrorMessage = "";
-            this.txtProductDesc.IsPassword = false;
-            this.txtProductDesc.Label = "Ghi chú";
-            this.txtProductDesc.Location = new System.Drawing.Point(24, 264);
-            this.txtProductDesc.Name = "txtProductDesc";
-            this.txtProductDesc.ReadOnly = true;
-            this.txtProductDesc.Required = false;
-            this.txtProductDesc.Size = new System.Drawing.Size(563, 250);
-            this.txtProductDesc.TabIndex = 32;
-            this.txtProductDesc.TextAreaMode = true;
-            this.txtProductDesc.TextboxPlaceholder = "Ghi chú";
-            this.txtProductDesc.TextBoxSize = new System.Drawing.Size(527, 188);
-            this.txtProductDesc.Value = "";
-            // 
             // guna2Panel12
             // 
             this.guna2Panel12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
@@ -652,6 +625,35 @@
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(10, 657);
             this.guna2Panel6.TabIndex = 3;
+            // 
+            // txtProductDesc
+            // 
+            this.txtProductDesc.ErrorMessage = "";
+            this.txtProductDesc.IsPassword = false;
+            this.txtProductDesc.Label = "Ghi chú";
+            this.txtProductDesc.Location = new System.Drawing.Point(24, 264);
+            this.txtProductDesc.Name = "txtProductDesc";
+            this.txtProductDesc.ReadOnly = true;
+            this.txtProductDesc.Required = false;
+            this.txtProductDesc.Size = new System.Drawing.Size(563, 250);
+            this.txtProductDesc.TabIndex = 32;
+            this.txtProductDesc.TextAreaMode = true;
+            this.txtProductDesc.TextboxPlaceholder = "Ghi chú";
+            this.txtProductDesc.TextBoxSize = new System.Drawing.Size(527, 188);
+            this.txtProductDesc.Value = "";
+            // 
+            // dgProducts
+            // 
+            this.dgProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgProducts.ColumnHeaderTexts = ((System.Collections.Generic.List<string>)(resources.GetObject("dgProducts.ColumnHeaderTexts")));
+            this.dgProducts.DataSource = null;
+            this.dgProducts.Location = new System.Drawing.Point(22, 71);
+            this.dgProducts.Name = "dgProducts";
+            this.dgProducts.Size = new System.Drawing.Size(530, 574);
+            this.dgProducts.TabIndex = 26;
+            this.dgProducts.CellClick += new System.EventHandler(this.dgProducts_CellClick);
             // 
             // FrmManageProducts
             // 
