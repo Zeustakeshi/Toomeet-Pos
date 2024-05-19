@@ -20,6 +20,8 @@ namespace Toomeet_Pos.DAL.Interfaces
 
         Category GetCategoryByNameAndStoreId(string name, long storeId);
 
+
+
         bool IsExistedCategoryByCodeAndStoreId(string code, long storeId);
 
         void DeleteCategoryById(Category category);

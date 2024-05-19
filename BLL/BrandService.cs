@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Toomeet_Pos.BLL.Interfaces;
 using Toomeet_Pos.DAL.Interfaces;
+using Toomeet_Pos.DAL.Repositories;
 using Toomeet_Pos.DTOs;
 using Toomeet_Pos.Entites;
 using Toomeet_Pos.Entites.Products;
@@ -27,7 +28,7 @@ namespace Toomeet_Pos.BLL
             return _brandRepository.GetAllBrandByStoreId(storeId);
         }
 
-        public Brand CreateBrand(NewBrandDto dto)
+        public Brand CreateBrand(SaveBrandDto dto)
         {
             Store store = dto.Store;
             Staff staff = dto.Staff;
@@ -61,6 +62,56 @@ namespace Toomeet_Pos.BLL
         public Brand GetBrandByNameAndStoreId (string name, long storeId)
         {
             return _brandRepository.GetBrandByNameAndStoreId(name, storeId);
+        }
+
+        public Brand UpdateBrand (SaveBrandDto dto)
+        {
+
+            Store store = dto.Store;
+            Staff staff = dto.Staff;
+            Brand brand = dto.Brand;
+
+            brand.Store = store;
+            brand.StoreId = store.Id;
+
+            Brand existedBrand = GetBrandByNameAndStoreId(brand.Name, brand.StoreId);
+
+            if (existedBrand == null)
+            {
+                throw new Exception("Nhãn hiệu không tồn tại");
+            }
+
+
+            return _brandRepository.UpdateBrand (existedBrand);
+
+        }
+
+
+        public Brand UpsertBrand(SaveBrandDto dto)
+        {
+            Store store = dto.Store;
+            Staff staff = dto.Staff;
+            Brand brand = dto.Brand;
+
+            brand.Store = store;
+            brand.StoreId = store.Id;
+
+            if (store == null || staff == null || brand == null)
+            {
+                throw new Exception("Không đủ thông tin để cập nhật nhãn hiệu");
+            }
+
+
+            Brand existedBrand = GetBrandByNameAndStoreId(brand.Name, brand.StoreId);
+
+            if (existedBrand != null)
+            {
+                return UpdateBrand(dto);
+            }
+            else
+            {
+                return CreateBrand(dto);
+            }
         }
     }
 }

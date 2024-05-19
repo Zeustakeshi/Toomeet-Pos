@@ -15,5 +15,6 @@ namespace Toomeet_Pos.DAL.Interfaces
 
         Brand GetBrandByNameAndStoreId(string name, long storeId);
 
+        Brand UpdateBrand (Brand brand);
     }
 }

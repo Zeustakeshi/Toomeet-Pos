@@ -12,7 +12,8 @@ namespace Toomeet_Pos.BLL.Interfaces
 {
     public interface IProductService
     {
-        Product CreateProduct(NewProductDto dto);
+
+        Product UpsertProduct (SaveProductDto dto);
 
         Product GetProductByProductId(ProductId id);
 

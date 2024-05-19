@@ -60,5 +60,13 @@ namespace Toomeet_Pos.DAL.Repositories
             _db.Product.Remove(product);
             _db.SaveChanges();
         }
+
+        public Product UpdateProduct (Product product)
+        {
+            _db.Product.Attach(product);
+            _db.Entry(product).State = EntityState.Modified;
+            _db.SaveChanges();
+            return product;
+        }
     }
 }

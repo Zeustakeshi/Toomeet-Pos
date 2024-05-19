@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -430,7 +431,6 @@ namespace Toomeet_Pos.UI.Forms.Products
                 DataTable dtProducts =  _excelService.ImportExcelFile(openFileDialog.FileName);
                 _products.Clear();
 
-               
 
                 foreach (DataRow row in dtProducts.Rows)
                 {
@@ -438,12 +438,21 @@ namespace Toomeet_Pos.UI.Forms.Products
                     Brand brand = new Brand()
                     {
                         Name = row["Thương hiệu"].ToString(),
+                        Store = _store,
+                        StoreId = _store.Id,
                     };
+
+
+                  
 
                     Category category = new Category()
                     {
-                        Name = row["Loại sản phẩm"].ToString()
+                        Name = row["Loại sản phẩm"].ToString(),
+                        Store = _store,
+                        StoreId = _store.Id,
                     };
+
+                 
 
                     Product product = new Product
                     {
@@ -453,8 +462,18 @@ namespace Toomeet_Pos.UI.Forms.Products
                         Description = row["Mô tả"].ToString(),
                         UnitOfMeasure = row["Đơn vị tính"].ToString(),
                         Weight = Convert.ToInt32(row["Cân nặng"]),
-                        Brand = brand,
-                        Category = category,
+                        Brand = _brandService.UpsertBrand(new SaveBrandDto()
+                        {
+                            Brand = brand,
+                            Staff = _currentStaff,
+                            Store = _store
+                        }),
+                        Category = _categoryService.UpsertCategory(new SaveCategoryDto()
+                        {
+                            Category = category,
+                            Staff = _currentStaff,
+                            Store = _store,
+                        }),
                         RetailPrice = Convert.ToDouble(row["Giá bán lẻ"]),
                         BulkPurchasePrice = Convert.ToDouble(row["Giá bán số lượng lớn"]),
                         PurchasePrice = Convert.ToDouble(row["Giá nhập hàng"]),
@@ -464,6 +483,11 @@ namespace Toomeet_Pos.UI.Forms.Products
                         UpdatedAt = DateTime.Parse(row["Cập nhật lần cuối"].ToString())
                     };
 
+                    _productService.UpsertProduct(new SaveProductDto() { 
+                        Product = product,
+                        Store = _store,
+                        Staff= _currentStaff,
+                    });
 
                     _products.Add(product);
 
@@ -474,7 +498,23 @@ namespace Toomeet_Pos.UI.Forms.Products
                 
                 
 
-            }catch (Exception ex)
+            }
+            catch (DbEntityValidationException ex)
+            {
+                // Truy cập vào các lỗi xác thực thực thể
+                foreach (var validationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        // In ra thông báo lỗi của từng thuộc tính
+                        Console.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                    }
+                }
+
+                // Bắt lại ngoại lệ và xử lý tùy ý
+                throw;
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(
                    ex.GetBaseException().Message,

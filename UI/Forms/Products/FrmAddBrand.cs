@@ -88,7 +88,7 @@ namespace Toomeet_Pos.UI.Forms
             try
             {
                 _brandService.CreateBrand(
-                    new NewBrandDto ()
+                    new SaveBrandDto ()
                     {
                         Brand = brand,
                         Staff = _currentStaff,

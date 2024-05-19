@@ -71,6 +71,26 @@ namespace Toomeet_Pos.Entites.Products
         [ForeignKey("StoreId")]
         public Store Store { get; set; }
 
+
+        public void UpdateAll (Product product)
+        {
+            SkuCode = product.SkuCode;
+            Name = product.Name;
+            BarCode = product.BarCode;
+            Description = product.Description;
+            UnitOfMeasure = product.UnitOfMeasure;
+            Weight = product.Weight;
+            Brand = product.Brand;
+            Category = product.Category;
+            RetailPrice = product.RetailPrice;
+            BulkPurchasePrice =product.BulkPurchasePrice;
+            PurchasePrice = product.PurchasePrice;
+            CostPrice = product.CostPrice;
+            InventoryQuantity = product.InventoryQuantity;
+            CreatedAt = product.CreatedAt;
+            UpdatedAt = product.UpdatedAt;
+        }
+
     }
 
     public enum ProductStatus

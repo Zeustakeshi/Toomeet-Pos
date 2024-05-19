@@ -62,8 +62,65 @@ namespace Toomeet_Pos.BLL
 
         }
 
+        public Product UpsertProduct(SaveProductDto dto)
+        {
 
-        public Product CreateProduct (NewProductDto dto)
+            Product product = dto.Product;
+            Store store = dto.Store;
+            Staff staff = dto.Staff;
+
+            if (product == null || store == null || staff == null)
+            {
+                throw new Exception("Không đủ thông tin để cập nhật sản phẩm");
+            }
+
+            if (!_roleService.CanEditProduct(staff))
+            {
+                throw new Exception("Nhân viên " + staff.Name + " ko có quyền cập nhật sản phẩm");
+            }
+
+
+            ProductId productId = new ProductId()
+            {
+                SkuCode=product.SkuCode,
+                StoreId= store.Id
+            };
+
+            Product existedProduct = _productRepository.GetProductByProductId(productId);
+
+            if (existedProduct != null)
+            {
+                return UpdateProduct(dto);
+            }else
+            {
+                return CreateProduct(dto);
+            }
+
+        }
+
+        private Product UpdateProduct (SaveProductDto dto)
+        {
+
+            Product product = dto.Product;
+            Store store = dto.Store;
+
+
+            ProductId productId = new ProductId()
+            {
+                SkuCode = product.SkuCode,
+                StoreId = store.Id
+            };
+
+            Product existedProduct = _productRepository.GetProductByProductId(productId);
+
+            existedProduct.UpdateAll(dto.Product);
+
+            return _productRepository.UpdateProduct(existedProduct);
+
+        }
+
+
+        private Product CreateProduct (SaveProductDto dto)
         {
 
             Product product = dto.Product;
@@ -87,11 +144,6 @@ namespace Toomeet_Pos.BLL
                 throw new Exception("Nhân viên " + createdStaff.Name + " Không có quyền tạo sản phẩm");
             }
 
-
-            if (IsExistedProduct(productId))
-            {
-                throw new Exception("Mã sản phẩm đã tồn tại trong cửa hàng");
-            }
 
             if (product.Store == null) product.Store = store;
 

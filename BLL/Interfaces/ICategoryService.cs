@@ -12,10 +12,6 @@ namespace Toomeet_Pos.BLL.Interfaces
     {
         List<Category> GetAllCategories(long storeId);
 
-        Category CreateCategory(SaveCategoryDto dto);
-
-        Category UpdateCategory(SaveCategoryDto dto);
-
 
         Category GetCategoryByCodeAndStoreId(string code, long storeId);
 

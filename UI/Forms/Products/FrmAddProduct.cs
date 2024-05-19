@@ -236,7 +236,7 @@ namespace Toomeet_Pos.UI.Forms
             _product.InventoryQuantity = inventoryQuantity;
             _product.Name = name;
 
-            NewProductDto dto = new NewProductDto()
+            SaveProductDto dto = new SaveProductDto()
             {
                 Product = _product,
                 Staff = _currentStaff,
@@ -247,7 +247,7 @@ namespace Toomeet_Pos.UI.Forms
 
             try
             {
-                _productService.CreateProduct(dto);
+                _productService.UpsertProduct(dto);
                 Close();
             }
             catch (DbEntityValidationException ex)

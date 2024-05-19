@@ -12,8 +12,13 @@ namespace Toomeet_Pos.BLL.Interfaces
     {
         List<Brand> GetAllBrands (long storeId);
 
-        Brand CreateBrand(NewBrandDto dto);
+        Brand CreateBrand(SaveBrandDto dto);
 
         Brand GetBrandByNameAndStoreId(string name, long storeId);
+
+
+        Brand UpsertBrand (SaveBrandDto dto);
+
+        Brand UpdateBrand (SaveBrandDto dto);
     }
 }

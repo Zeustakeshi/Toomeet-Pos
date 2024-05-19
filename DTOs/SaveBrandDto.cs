@@ -8,7 +8,7 @@ using Toomeet_Pos.Entites.Products;
 
 namespace Toomeet_Pos.DTOs
 {
-    public class NewBrandDto
+    public class SaveBrandDto
     {
         public Brand Brand { get; set; }
         public Staff Staff { get; set; }

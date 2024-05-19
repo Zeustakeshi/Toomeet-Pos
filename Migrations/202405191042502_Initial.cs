@@ -71,8 +71,7 @@
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("public.Stores", t => t.StoreId, cascadeDelete: true)
-                .Index(t => t.Code, unique: true)
-                .Index(t => new { t.StoreId, t.Name }, unique: true);
+                .Index(t => new { t.StoreId, t.Code }, unique: true);
             
             CreateTable(
                 "public.Stores",
@@ -286,8 +285,7 @@
             DropIndex("public.Staffs", new[] { "Phone" });
             DropIndex("public.Stores", new[] { "Owner_Id" });
             DropIndex("public.Stores", new[] { "Name" });
-            DropIndex("public.Categories", new[] { "StoreId", "Name" });
-            DropIndex("public.Categories", new[] { "Code" });
+            DropIndex("public.Categories", new[] { "StoreId", "Code" });
             DropIndex("public.Products", new[] { "Category_Id" });
             DropIndex("public.Products", new[] { "Brand_Id" });
             DropIndex("public.Products", new[] { "StoreId" });

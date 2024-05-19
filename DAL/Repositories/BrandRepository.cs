@@ -37,5 +37,17 @@ namespace Toomeet_Pos.DAL.Repositories
             _db.SaveChanges();
             return newBrand;
         }
+
+        public Brand UpdateBrand (Brand brand)
+        {
+
+            Brand updatedBrand = _db.Brand.Attach(brand);
+
+            _db.Entry(brand).State = System.Data.Entity.EntityState.Modified;
+
+            _db.SaveChanges();
+
+            return updatedBrand;
+        }
     }
 }

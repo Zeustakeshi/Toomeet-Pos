@@ -16,6 +16,7 @@ using Toomeet_Pos.UI.Forms.Dashboard;
 using Toomeet_Pos.UI.Forms.Products;
 using Toomeet_Pos.UI.Forms.Staffs;
 using Toomeet_Pos.UI.Validations;
+using Toomeet_Pos.Uitls;
 
 namespace Toomeet_Pos
 {
@@ -34,7 +35,7 @@ namespace Toomeet_Pos
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Add handler to handle the exception raised by main threads
-            Application.ThreadException +=  new ThreadExceptionEventHandler(Application_ThreadException);
+            Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
 
             var services = new ServiceCollection();
 
@@ -49,11 +50,12 @@ namespace Toomeet_Pos
 
                 Application.ApplicationExit += new EventHandler((object sender, EventArgs e) =>
                 {
-                  // clean up here
+                    // clean up here
                 });
 
                 Application.Run(new FrmLoading());
             }
+
         }
 
         private static void ConfigureServices(ServiceCollection services)

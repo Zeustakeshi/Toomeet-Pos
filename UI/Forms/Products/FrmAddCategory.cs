@@ -96,7 +96,7 @@ namespace Toomeet_Pos.UI.Forms
             btnAddNewCategory.Enabled = false;
             try
             {
-                _categoryService.CreateCategory(
+                _categoryService.UpsertCategory(
 
                     new SaveCategoryDto()
                     {

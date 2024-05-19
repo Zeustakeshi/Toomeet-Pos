@@ -46,7 +46,7 @@ namespace Toomeet_Pos.DAL
 
             // Mỗi danh mục sản phẩm là duy nhất trong cửa hàng
             modelBuilder.Entity<Category>()
-                .HasIndex(c => new { c.StoreId, c.Name })
+                .HasIndex(c => new { c.StoreId, c.Code })
                 .IsUnique(true);
 
             // Mỗi thương hiệu là duy nhất trong 1 cửa hàng

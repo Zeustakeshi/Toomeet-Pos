@@ -13,11 +13,14 @@ namespace Toomeet_Pos.DAL.Interfaces
 
         Product SaveProduct(Product product);
 
+        Product UpdateProduct (Product product);
+
         List<Product> GetAllProductByStoreId(long storeId);
 
         List<Product> GetProductByKeyword(string keyword);
 
         void DeleteProduct (Product product);
+
 
     }
 }
