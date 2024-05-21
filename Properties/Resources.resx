@@ -127,11 +127,11 @@
   <data name="checked_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checked_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download_icon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download_icon4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="phan-mem-quan-ly-ban-hang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phan-mem-quan-ly-ban-hang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="store_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\store_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sidebar_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sidebar_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +196,14 @@
   <data name="settings_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="download_icon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download_icon4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cloud-computing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cloud-computing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trash-bin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash-bin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,7 +217,7 @@
   <data name="Logo_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="store_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\store_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

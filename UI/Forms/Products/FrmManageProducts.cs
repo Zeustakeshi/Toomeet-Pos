@@ -197,9 +197,8 @@ namespace Toomeet_Pos.UI.Forms.Products
             lbProductRetailPrice.Text = selectedProduct.RetailPrice.ToString();
             lbProductUnitOfMeasure.Text = selectedProduct.UnitOfMeasure?.ToString();
             txtProductDesc.Value = selectedProduct.Description;
-
-
             if (selectedProduct.Image != null) pictureBoxAvatar.Image = _imageService.ByteArrayToImage(selectedProduct.Image);
+            else pictureBoxAvatar.Image = pictureBoxAvatar.ErrorImage;
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -234,6 +233,7 @@ namespace Toomeet_Pos.UI.Forms.Products
             try
             {
                 _productService.DeleteProduct(selectedProduct, _currentStaff);
+                LoadAllPoducts();
             }
             catch (Exception ex)
             {
@@ -525,6 +525,51 @@ namespace Toomeet_Pos.UI.Forms.Products
 
                 Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex);
+            }
+        }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+
+            if (openFile.ShowDialog() != DialogResult.OK) return;
+
+            string path = openFile.FileName;
+
+
+            try
+            {
+                Product selectedProduct = GetSelectedProduct();
+                if (selectedProduct == null)
+                {
+                    throw new Exception("Không có sản phẩm nào chọn");
+                }
+
+                selectedProduct.Image = _imageService.ImageToByteArray(path);
+                _productService.UpsertProduct(new SaveProductDto()
+                {
+                    Product= selectedProduct,
+                    Store = _store,
+                    Staff = _currentStaff
+                });
+                pictureBoxAvatar.Image = Image.FromFile(path);
+
+                MessageBox.Show(
+                   "Ảnh đã tải lên thành công",
+                   "Cập nhật sản phẩm thành công",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Information
+               );
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.GetBaseException().Message,
+                    "Tải ảnh lên thất bại",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
     }

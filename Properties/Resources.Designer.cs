@@ -133,6 +133,16 @@ namespace Toomeet_Pos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete {
+            get {
+                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dollar_ico {
             get {
                 object obj = ResourceManager.GetObject("dollar_ico", resourceCulture);
@@ -356,6 +366,16 @@ namespace Toomeet_Pos.Properties {
         internal static System.Drawing.Bitmap store_image {
             get {
                 object obj = ResourceManager.GetObject("store_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_bin {
+            get {
+                object obj = ResourceManager.GetObject("trash-bin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

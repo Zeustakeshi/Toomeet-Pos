@@ -15,6 +15,7 @@ using Toomeet_Pos.Entites;
 using Toomeet_Pos.UI.Forms.Order;
 using Toomeet_Pos.UI.Forms.Overview;
 using Toomeet_Pos.UI.Forms.Products;
+using Toomeet_Pos.UI.Forms.Sales;
 using Toomeet_Pos.UI.Forms.Staffs;
 
 namespace Toomeet_Pos.UI.Forms.Dashboard
@@ -169,6 +170,7 @@ namespace Toomeet_Pos.UI.Forms.Dashboard
         private void sidebarItemSoldAtTheCounter_Click(object sender, EventArgs e)
         {
             ActiveSideBarItem(sender);
+            OpenSubForm(new FrmSoldAtTheCounter());
         }
 
         private void sidebarItemSettings_Click(object sender, EventArgs e)

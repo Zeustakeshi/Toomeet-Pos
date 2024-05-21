@@ -32,6 +32,8 @@ namespace Toomeet_Pos.UI.Validations
 
             if (barcode.Length != 13) return ValidateResult.Error("Barcode không hợp lệ");
 
+            if (barcode.StartsWith("0")) return ValidateResult.Error("Barcode không được bắt đầu bằng kí tự 0");
+
             return ValidateResult.Success();
         }
 

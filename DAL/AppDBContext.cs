@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Toomeet_Pos.Entites;
+using Toomeet_Pos.Entites.orders;
 using Toomeet_Pos.Entites.Products;
 using Toomeet_Pos.Entites.Roles;
 
@@ -81,6 +82,7 @@ namespace Toomeet_Pos.DAL
         public DbSet<Product> Product { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Brand> Brand { get; set; }
+        public DbSet<Order> Order { get; set; }
 
         private void AddTimestamps()
         {

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Toomeet_Pos.Entites.orders;
 using Toomeet_Pos.Entites.Products;
 
 namespace Toomeet_Pos.Entites
@@ -37,5 +38,7 @@ namespace Toomeet_Pos.Entites
         public List<Role> Roles { get; set; }
 
         public List<Product> Products { get; set; }
+
+        public List<Order> Order { get; set; }
     }
 }

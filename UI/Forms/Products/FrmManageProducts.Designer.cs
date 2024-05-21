@@ -31,17 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageProducts));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.llbExportExampleProductFile = new System.Windows.Forms.LinkLabel();
-            this.btnAddProduct = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnViewProductCategories = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnExportProductFile = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnUploadProductFile = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.btnAddProduct2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
@@ -63,8 +58,14 @@
             this.btnDelete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnViewProductDetail = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnAddProduct2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnAddProduct = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnExportProductFile = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnUploadProductFile = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnUploadImage = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtProductDesc = new Toomeet_Pos.UI.UC.CustomTextBox();
             this.dgProducts = new Toomeet_Pos.UI.UC.CustomDataGridView();
             this.guna2Panel1.SuspendLayout();
@@ -107,28 +108,6 @@
             this.llbExportExampleProductFile.Text = "Xem file sản phẩm mẫu";
             this.llbExportExampleProductFile.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbViewExampleProductFile_LinkClicked);
             // 
-            // btnAddProduct
-            // 
-            this.btnAddProduct.BorderRadius = 10;
-            this.btnAddProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddProduct.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddProduct.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAddProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.btnAddProduct.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
-            this.btnAddProduct.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddProduct.ForeColor = System.Drawing.Color.White;
-            this.btnAddProduct.Image = global::Toomeet_Pos.Properties.Resources.plus_ico;
-            this.btnAddProduct.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnAddProduct.Location = new System.Drawing.Point(984, 10);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(177, 37);
-            this.btnAddProduct.TabIndex = 25;
-            this.btnAddProduct.Text = "Thêm sản phẩm";
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
             // btnViewProductCategories
             // 
             this.btnViewProductCategories.BorderRadius = 10;
@@ -158,27 +137,6 @@
             this.guna2Panel3.Size = new System.Drawing.Size(10, 37);
             this.guna2Panel3.TabIndex = 23;
             // 
-            // btnExportProductFile
-            // 
-            this.btnExportProductFile.BorderRadius = 10;
-            this.btnExportProductFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExportProductFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExportProductFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExportProductFile.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExportProductFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExportProductFile.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExportProductFile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.btnExportProductFile.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
-            this.btnExportProductFile.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExportProductFile.ForeColor = System.Drawing.Color.White;
-            this.btnExportProductFile.Image = global::Toomeet_Pos.Properties.Resources.download_icon4;
-            this.btnExportProductFile.Location = new System.Drawing.Point(163, 10);
-            this.btnExportProductFile.Name = "btnExportProductFile";
-            this.btnExportProductFile.Size = new System.Drawing.Size(133, 37);
-            this.btnExportProductFile.TabIndex = 22;
-            this.btnExportProductFile.Text = "Xuất file";
-            this.btnExportProductFile.Click += new System.EventHandler(this.btnExportProductFile_Click);
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -187,27 +145,6 @@
             this.guna2Panel2.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
             this.guna2Panel2.Size = new System.Drawing.Size(10, 37);
             this.guna2Panel2.TabIndex = 21;
-            // 
-            // btnUploadProductFile
-            // 
-            this.btnUploadProductFile.BorderRadius = 10;
-            this.btnUploadProductFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUploadProductFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUploadProductFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUploadProductFile.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUploadProductFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUploadProductFile.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnUploadProductFile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.btnUploadProductFile.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
-            this.btnUploadProductFile.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUploadProductFile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadProductFile.Image = global::Toomeet_Pos.Properties.Resources.cloud_computing1;
-            this.btnUploadProductFile.Location = new System.Drawing.Point(20, 10);
-            this.btnUploadProductFile.Name = "btnUploadProductFile";
-            this.btnUploadProductFile.Size = new System.Drawing.Size(133, 37);
-            this.btnUploadProductFile.TabIndex = 20;
-            this.btnUploadProductFile.Text = "Nhập file";
-            this.btnUploadProductFile.Click += new System.EventHandler(this.btnUploadProductFile_Click);
             // 
             // guna2Panel4
             // 
@@ -236,27 +173,6 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1181, 657);
             this.guna2ShadowPanel1.TabIndex = 2;
             // 
-            // btnAddProduct2
-            // 
-            this.btnAddProduct2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddProduct2.BorderRadius = 10;
-            this.btnAddProduct2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddProduct2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddProduct2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddProduct2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddProduct2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddProduct2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.btnAddProduct2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
-            this.btnAddProduct2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddProduct2.ForeColor = System.Drawing.Color.White;
-            this.btnAddProduct2.Image = global::Toomeet_Pos.Properties.Resources.plus_ico;
-            this.btnAddProduct2.Location = new System.Drawing.Point(274, 344);
-            this.btnAddProduct2.Name = "btnAddProduct2";
-            this.btnAddProduct2.Size = new System.Drawing.Size(50, 38);
-            this.btnAddProduct2.TabIndex = 27;
-            // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -276,37 +192,6 @@
             this.btnSearch.TabIndex = 25;
             this.btnSearch.Text = "Lọc";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.BorderRadius = 10;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::Toomeet_Pos.Properties.Resources.search_ico;
-            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.txtSearch.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txtSearch.IconRightOffset = new System.Drawing.Point(20, 20);
-            this.txtSearch.IconRightSize = new System.Drawing.Size(5, 5);
-            this.txtSearch.Location = new System.Drawing.Point(22, 23);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Tìm kiếm theo tên sản phẩm, barcode, skucode";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(446, 35);
-            this.txtSearch.TabIndex = 24;
             // 
             // guna2Panel5
             // 
@@ -597,26 +482,13 @@
             this.guna2Panel12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.guna2Panel12.BorderRadius = 10;
             this.guna2Panel12.BorderThickness = 1;
+            this.guna2Panel12.Controls.Add(this.btnUploadImage);
             this.guna2Panel12.Controls.Add(this.pictureBoxAvatar);
             this.guna2Panel12.Location = new System.Drawing.Point(6, 23);
             this.guna2Panel12.Name = "guna2Panel12";
             this.guna2Panel12.Padding = new System.Windows.Forms.Padding(10);
             this.guna2Panel12.Size = new System.Drawing.Size(207, 210);
             this.guna2Panel12.TabIndex = 24;
-            // 
-            // pictureBoxAvatar
-            // 
-            this.pictureBoxAvatar.BorderRadius = 10;
-            this.pictureBoxAvatar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxAvatar.ErrorImage = global::Toomeet_Pos.Properties.Resources.default_avatar;
-            this.pictureBoxAvatar.Image = global::Toomeet_Pos.Properties.Resources.store_image;
-            this.pictureBoxAvatar.ImageRotate = 0F;
-            this.pictureBoxAvatar.Location = new System.Drawing.Point(10, 10);
-            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
-            this.pictureBoxAvatar.Size = new System.Drawing.Size(187, 190);
-            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxAvatar.TabIndex = 1;
-            this.pictureBoxAvatar.TabStop = false;
             // 
             // guna2Panel6
             // 
@@ -625,6 +497,157 @@
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(10, 657);
             this.guna2Panel6.TabIndex = 3;
+            // 
+            // pictureBoxAvatar
+            // 
+            this.pictureBoxAvatar.BorderRadius = 10;
+            this.pictureBoxAvatar.ErrorImage = global::Toomeet_Pos.Properties.Resources.store_image;
+            this.pictureBoxAvatar.Image = global::Toomeet_Pos.Properties.Resources.store_image;
+            this.pictureBoxAvatar.ImageRotate = 0F;
+            this.pictureBoxAvatar.Location = new System.Drawing.Point(10, 10);
+            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
+            this.pictureBoxAvatar.Size = new System.Drawing.Size(187, 146);
+            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAvatar.TabIndex = 1;
+            this.pictureBoxAvatar.TabStop = false;
+            // 
+            // btnAddProduct2
+            // 
+            this.btnAddProduct2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddProduct2.BorderRadius = 10;
+            this.btnAddProduct2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddProduct2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddProduct2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddProduct2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddProduct2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddProduct2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnAddProduct2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
+            this.btnAddProduct2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddProduct2.ForeColor = System.Drawing.Color.White;
+            this.btnAddProduct2.Image = global::Toomeet_Pos.Properties.Resources.plus_ico;
+            this.btnAddProduct2.Location = new System.Drawing.Point(274, 344);
+            this.btnAddProduct2.Name = "btnAddProduct2";
+            this.btnAddProduct2.Size = new System.Drawing.Size(50, 38);
+            this.btnAddProduct2.TabIndex = 27;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeft = global::Toomeet_Pos.Properties.Resources.search_ico;
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.txtSearch.IconRightOffset = new System.Drawing.Point(20, 20);
+            this.txtSearch.IconRightSize = new System.Drawing.Size(5, 5);
+            this.txtSearch.Location = new System.Drawing.Point(22, 23);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "Tìm kiếm theo tên sản phẩm, barcode, skucode";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(446, 35);
+            this.txtSearch.TabIndex = 24;
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.BorderRadius = 10;
+            this.btnAddProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddProduct.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddProduct.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAddProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnAddProduct.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
+            this.btnAddProduct.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddProduct.ForeColor = System.Drawing.Color.White;
+            this.btnAddProduct.Image = global::Toomeet_Pos.Properties.Resources.plus_ico;
+            this.btnAddProduct.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnAddProduct.Location = new System.Drawing.Point(984, 10);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(177, 37);
+            this.btnAddProduct.TabIndex = 25;
+            this.btnAddProduct.Text = "Thêm sản phẩm";
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
+            // btnExportProductFile
+            // 
+            this.btnExportProductFile.BorderRadius = 10;
+            this.btnExportProductFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportProductFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportProductFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportProductFile.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportProductFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportProductFile.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExportProductFile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnExportProductFile.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
+            this.btnExportProductFile.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExportProductFile.ForeColor = System.Drawing.Color.White;
+            this.btnExportProductFile.Image = global::Toomeet_Pos.Properties.Resources.download_icon4;
+            this.btnExportProductFile.Location = new System.Drawing.Point(163, 10);
+            this.btnExportProductFile.Name = "btnExportProductFile";
+            this.btnExportProductFile.Size = new System.Drawing.Size(133, 37);
+            this.btnExportProductFile.TabIndex = 22;
+            this.btnExportProductFile.Text = "Xuất file";
+            this.btnExportProductFile.Click += new System.EventHandler(this.btnExportProductFile_Click);
+            // 
+            // btnUploadProductFile
+            // 
+            this.btnUploadProductFile.BorderRadius = 10;
+            this.btnUploadProductFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUploadProductFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUploadProductFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUploadProductFile.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUploadProductFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUploadProductFile.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnUploadProductFile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnUploadProductFile.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
+            this.btnUploadProductFile.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUploadProductFile.ForeColor = System.Drawing.Color.White;
+            this.btnUploadProductFile.Image = global::Toomeet_Pos.Properties.Resources.cloud_computing1;
+            this.btnUploadProductFile.Location = new System.Drawing.Point(20, 10);
+            this.btnUploadProductFile.Name = "btnUploadProductFile";
+            this.btnUploadProductFile.Size = new System.Drawing.Size(133, 37);
+            this.btnUploadProductFile.TabIndex = 20;
+            this.btnUploadProductFile.Text = "Nhập file";
+            this.btnUploadProductFile.Click += new System.EventHandler(this.btnUploadProductFile_Click);
+            // 
+            // btnUploadImage
+            // 
+            this.btnUploadImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUploadImage.BorderRadius = 10;
+            this.btnUploadImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUploadImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUploadImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUploadImage.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUploadImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUploadImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnUploadImage.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
+            this.btnUploadImage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUploadImage.ForeColor = System.Drawing.Color.White;
+            this.btnUploadImage.Image = global::Toomeet_Pos.Properties.Resources.cloud_computing1;
+            this.btnUploadImage.Location = new System.Drawing.Point(13, 164);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(181, 38);
+            this.btnUploadImage.TabIndex = 56;
+            this.btnUploadImage.Text = "Tải ảnh";
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
             // txtProductDesc
             // 
@@ -721,5 +744,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2GradientButton btnViewProductCategories;
         private System.Windows.Forms.LinkLabel llbExportExampleProductFile;
+        private Guna.UI2.WinForms.Guna2GradientButton btnUploadImage;
     }
 }

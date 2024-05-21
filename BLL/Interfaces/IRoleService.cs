@@ -42,5 +42,12 @@ namespace Toomeet_Pos.DAL.Interfaces
         bool CanEditProduct(Staff staff);
 
         bool CanDeleteProduct(Staff staff);
+
+
+        // ORDER
+
+        bool CanViewOrder(Staff staff);
+
+        bool CanCreateOrder(Staff staff);
     }
 }

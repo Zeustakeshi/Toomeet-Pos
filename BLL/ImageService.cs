@@ -28,6 +28,11 @@ namespace Toomeet_Pos.BLL
 
         public Image ByteArrayToImage(byte[] bytes)
         {
+            return StaticByteArrayToImage(bytes);
+        }
+
+        public static Image StaticByteArrayToImage(byte[] bytes)
+        {
             Image image;
 
             using (MemoryStream stream = new MemoryStream(bytes))

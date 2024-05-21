@@ -68,6 +68,7 @@ namespace Toomeet_Pos
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<ICategoryRepository, CategoryRepository>();
             services.AddSingleton<IBrandRepository, BrandRepository>();
+            services.AddSingleton<IOrderRepository, OrderRepository>();
 
             // BLL
             services.AddSingleton<IRoleService, RoleService>();
@@ -80,6 +81,8 @@ namespace Toomeet_Pos
             services.AddSingleton<IImageService, ImageService>();
             services.AddSingleton<IMailService, MailService>();
             services.AddSingleton<IExcelService, ExcelService>();
+            services.AddSingleton<IWordService, WordService>();
+            services.AddSingleton<IOrderService, OrderService>();
 
             // VALIDATE
             services.AddSingleton<IAuthValidate, AuthValidate>();

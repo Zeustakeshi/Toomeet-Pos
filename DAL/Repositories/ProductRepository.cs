@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Toomeet_Pos.DAL.Interfaces;
 using Toomeet_Pos.Entites.Products;
+using Toomeet_Pos.Uitls;
 
 namespace Toomeet_Pos.DAL.Repositories
 {
@@ -44,6 +45,8 @@ namespace Toomeet_Pos.DAL.Repositories
 
         public List<Product> GetProductByKeyword(string keyword)
         {
+
+
             return _db
                 .Product
                 .Include(p => p.Category)

@@ -174,7 +174,7 @@ namespace Toomeet_Pos.BLL
                 new Product()
                 {
                     Name = "Nước tăng lực Sting",
-                    BarCode = "0924252526256",
+                    BarCode = "1924252526256",
                     Brand = new Brand ()
                     {
                         Name = "Sting",
@@ -201,7 +201,7 @@ namespace Toomeet_Pos.BLL
                 new Product()
                 {
                     Name = "Nước suối Lavie",
-                    BarCode = "8935234523456",
+                    BarCode = "1924252526256",
                     Brand = new Brand ()
                     {
                         Name = "Lavie",
@@ -228,7 +228,7 @@ namespace Toomeet_Pos.BLL
                 new Product()
                 {
                     Name = "Nước ngọt Coca-Cola",
-                    BarCode = "3423453243234",
+                    BarCode = "1924252526256",
                     Brand = new Brand ()
                     {
                         Name = "Coca-Cola",
@@ -255,7 +255,7 @@ namespace Toomeet_Pos.BLL
                 new Product()
                 {
                     Name = "Sữa tươi TH True Milk",
-                    BarCode = "9876543210987",
+                    BarCode = "1924252526256",
                     Brand = new Brand ()
                     {
                         Name = "TH True Milk",
