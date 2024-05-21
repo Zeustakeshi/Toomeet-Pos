@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Toomeet_Pos.BLL.Interfaces;
 using Toomeet_Pos.DAL.Interfaces;
 using Toomeet_Pos.DTOs;
 using Toomeet_Pos.Entites.orders;
@@ -10,12 +11,7 @@ using Toomeet_Pos.Entites.orders;
 namespace Toomeet_Pos.BLL
 {
 
-    public interface IOrderService
-    {
-        Order CreateOrder(SaveOrderDto dto);
-
-        List<Order> GetAllOrderByStoreId(long storeId);
-    }
+   
     public class OrderService : IOrderService
     {
 
@@ -44,6 +40,16 @@ namespace Toomeet_Pos.BLL
         public List<Order> GetAllOrderByStoreId(long storeId)
         {
             return _orderRepository.GetAllOrderByStoreId(storeId);
+        }
+
+        public List<Order> GetAllOrderBetweenTime(long storeId, DateTime startTime, DateTime endTime)
+        {
+            return _orderRepository.GetAllBetweenTime(storeId, startTime, endTime);
+        }
+
+        public List<OrderDetail> SaveAllOrderDetails (List<OrderDetail> orderDetails)
+        {
+            return _orderRepository.SaveOrderDetails(orderDetails);
         }
     }
 }

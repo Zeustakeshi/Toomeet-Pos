@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Toomeet_Pos.UI.Forms.Order
+namespace Toomeet_Pos.UI.Forms.Orders
 {
     public partial class FrmOrder : Form
     {

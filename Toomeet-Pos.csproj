@@ -66,6 +66,9 @@
     <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
       <HintPath>packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.Charts.WinForms.1.0.9\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -136,6 +139,7 @@
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -159,7 +163,9 @@
     <Compile Include="BLL\Interfaces\IExcelService.cs" />
     <Compile Include="BLL\Interfaces\IImageService.cs" />
     <Compile Include="BLL\Interfaces\IMailService.cs" />
+    <Compile Include="BLL\Interfaces\IOrderService.cs" />
     <Compile Include="BLL\Interfaces\IProductService.cs" />
+    <Compile Include="DAL\Interfaces\IOrderRepository.cs" />
     <Compile Include="DAL\Repositories\OrderRepository.cs" />
     <Compile Include="BLL\OrderService.cs" />
     <Compile Include="BLL\WordService.cs" />
@@ -198,6 +204,7 @@
     <Compile Include="DTOs\NewStoreDto.cs" />
     <Compile Include="Entites\BaseEntity.cs" />
     <Compile Include="Entites\orders\Order.cs" />
+    <Compile Include="Entites\orders\OrderDetail.cs" />
     <Compile Include="Entites\Products\Brand.cs" />
     <Compile Include="Entites\Products\Category.cs" />
     <Compile Include="Entites\Products\Product.cs" />
@@ -211,13 +218,9 @@
     <Compile Include="Entites\Roles\RoleStaff.cs" />
     <Compile Include="Entites\Staff.cs" />
     <Compile Include="Entites\Store.cs" />
-    <Compile Include="Migrations\202405191042502_Initial.cs" />
-    <Compile Include="Migrations\202405191042502_Initial.Designer.cs">
-      <DependentUpon>202405191042502_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202405210610371_Initial1.cs" />
-    <Compile Include="Migrations\202405210610371_Initial1.Designer.cs">
-      <DependentUpon>202405210610371_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\202405210936551_Initial.cs" />
+    <Compile Include="Migrations\202405210936551_Initial.Designer.cs">
+      <DependentUpon>202405210936551_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -277,10 +280,10 @@
     <Compile Include="UI\Forms\FrmTemplate.Designer.cs">
       <DependentUpon>FrmTemplate.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Forms\Order\FrmOrder.cs">
+    <Compile Include="UI\Forms\Orders\FrmOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Forms\Order\FrmOrder.Designer.cs">
+    <Compile Include="UI\Forms\Orders\FrmOrder.Designer.cs">
       <DependentUpon>FrmOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Forms\Overview\FrmOverview.cs">
@@ -466,11 +469,8 @@
     <Compile Include="UI\Validations\StaffValidate.cs" />
     <Compile Include="UI\Validations\StoreValidate.cs" />
     <Compile Include="UI\Validations\ValidateResult.cs" />
-    <EmbeddedResource Include="Migrations\202405191042502_Initial.resx">
-      <DependentUpon>202405191042502_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202405210610371_Initial1.resx">
-      <DependentUpon>202405210610371_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202405210936551_Initial.resx">
+      <DependentUpon>202405210936551_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -509,7 +509,7 @@
     <EmbeddedResource Include="UI\Forms\FrmTemplate.resx">
       <DependentUpon>FrmTemplate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Forms\Order\FrmOrder.resx">
+    <EmbeddedResource Include="UI\Forms\Orders\FrmOrder.resx">
       <DependentUpon>FrmOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\Overview\FrmOverview.resx">
@@ -705,6 +705,11 @@
     <None Include="Resources\store_image.png" />
     <None Include="Resources\trash-bin.png" />
     <None Include="Resources\delete.png" />
+    <None Include="Resources\dollar.png" />
+    <None Include="Resources\dollar2.png" />
+    <None Include="Resources\delivery-box.png" />
+    <None Include="Resources\exchange.png" />
+    <None Include="Resources\cancel.png" />
     <Content Include="Templates\NewStaffEmailTemplate.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

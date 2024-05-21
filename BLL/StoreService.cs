@@ -1,13 +1,14 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Toomeet_Pos.BLL.Interfaces;
 using Toomeet_Pos.DAL.Interfaces;
 using Toomeet_Pos.DTOs;
 using Toomeet_Pos.Entites;
-using static System.Windows.Forms.AxHost;
+using Toomeet_Pos.Entites.orders;
+using Toomeet_Pos.Uitls;
+
 
 namespace Toomeet_Pos.BLL
 {
@@ -15,17 +16,22 @@ namespace Toomeet_Pos.BLL
     {
         private readonly IStoreRepository _storeRepository;
         private readonly IStaffService _staffService;
+        private readonly IOrderService _orderService;
 
         public StoreService(
             IStoreRepository storeRepository,
             IStaffService staffService
+            ,
+            IOrderService orderService
+
         )
         {
             _storeRepository = storeRepository;
             _staffService = staffService;
+            _orderService = orderService;
         }
 
-        public Store GetStoreById (long storeId)
+        public Store GetStoreById(long storeId)
         {
             return _storeRepository.GetStoreById(storeId);
         }
@@ -37,7 +43,7 @@ namespace Toomeet_Pos.BLL
 
         public Store RegisterStore(NewStoreDto dto)
         {
-            
+
             if (_storeRepository.GetStoreByName(dto.StoreName) != null)
             {
                 throw new Exception("Tên cửa hành đã tồn tại");
@@ -68,15 +74,15 @@ namespace Toomeet_Pos.BLL
                 _storeRepository.RemoveStore(newStore);
                 throw new Exception("Tạo cửa hàng thất bại");
             }
-          
+
         }
 
-        public Store UpdateStore (Store updateStore)
+        public Store UpdateStore(Store updateStore)
         {
 
             Store store = GetStoreById(updateStore.Id);
 
-            if (store  == null)
+            if (store == null)
             {
                 throw new Exception("Không tìm thấy cửa hàng.");
             }
@@ -89,11 +95,11 @@ namespace Toomeet_Pos.BLL
             )
             {
                 throw new Exception("Số điện thoại đã được sử dụng");
-                
+
             }
 
             if (
-              
+
               store.Owner.Email != null &&
                 updateStore.Owner.Email != null &&
                 store.Owner.Email.Trim().Length > 0 &&
@@ -107,6 +113,23 @@ namespace Toomeet_Pos.BLL
 
 
             return _storeRepository.UpdateStore(updateStore);
+        }
+
+        public double GetRevenue(List<Order> orders)
+        {
+            return orders.Sum(o => o?.OrderDetails?.Sum(od => od.Total) ?? 0);
+        }
+
+        public double GetCost(List<Order> orders)
+        {
+            double cost = 0;
+
+            foreach (Order order in orders)
+            {
+                cost += order?.OrderDetails?.Sum(od => od?.Product?.PurchasePrice * od?.Quantity ?? 0) ?? 0;
+            }
+
+            return cost;
         }
     }
 }

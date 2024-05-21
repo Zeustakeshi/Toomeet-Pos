@@ -92,6 +92,28 @@
                 .Index(t => t.Owner_Id);
             
             CreateTable(
+                "public.Orders",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        CustomerName = c.String(),
+                        CustomerAddress = c.String(),
+                        AmountGivenByCustomer = c.Double(nullable: false),
+                        Change = c.Double(nullable: false),
+                        CustomerDebt = c.Double(nullable: false),
+                        Total = c.Double(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdatedAt = c.DateTime(nullable: false),
+                        Staff_Id = c.Long(nullable: false),
+                        Store_Id = c.Long(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("public.Staffs", t => t.Staff_Id, cascadeDelete: true)
+                .ForeignKey("public.Stores", t => t.Store_Id, cascadeDelete: true)
+                .Index(t => t.Staff_Id)
+                .Index(t => t.Store_Id);
+            
+            CreateTable(
                 "public.Staffs",
                 c => new
                     {
@@ -253,16 +275,40 @@
                     })
                 .PrimaryKey(t => t.Id);
             
+            CreateTable(
+                "public.OrderDetails",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        Quantity = c.Int(nullable: false),
+                        VAT = c.Int(nullable: false),
+                        Total = c.Double(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdatedAt = c.DateTime(nullable: false),
+                        Order_Id = c.Long(nullable: false),
+                        Product_SkuCode = c.String(nullable: false, maxLength: 128),
+                        Product_StoreId = c.Long(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("public.Orders", t => t.Order_Id, cascadeDelete: true)
+                .ForeignKey("public.Products", t => new { t.Product_SkuCode, t.Product_StoreId }, cascadeDelete: true)
+                .Index(t => t.Order_Id)
+                .Index(t => new { t.Product_SkuCode, t.Product_StoreId });
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("public.OrderDetails", new[] { "Product_SkuCode", "Product_StoreId" }, "public.Products");
+            DropForeignKey("public.OrderDetails", "Order_Id", "public.Orders");
             DropForeignKey("public.Brands", "StoreId", "public.Stores");
             DropForeignKey("public.Products", "StoreId", "public.Stores");
             DropForeignKey("public.Products", "Category_Id", "public.Categories");
             DropForeignKey("public.Categories", "StoreId", "public.Stores");
             DropForeignKey("public.Staffs", "WorkplaceId", "public.Stores");
             DropForeignKey("public.Stores", "Owner_Id", "public.Staffs");
+            DropForeignKey("public.Orders", "Store_Id", "public.Stores");
+            DropForeignKey("public.Orders", "Staff_Id", "public.Staffs");
             DropForeignKey("public.Staffs", "Role_Id", "public.Roles");
             DropForeignKey("public.Roles", "StoreId", "public.Stores");
             DropForeignKey("public.Roles", "Staff_Id", "public.RoleStaffs");
@@ -272,6 +318,8 @@
             DropForeignKey("public.Roles", "InvetoryInspection_Id", "public.RoleInvetoryInspections");
             DropForeignKey("public.Roles", "Customer_Id", "public.RoleCustomers");
             DropForeignKey("public.Products", "Brand_Id", "public.Brands");
+            DropIndex("public.OrderDetails", new[] { "Product_SkuCode", "Product_StoreId" });
+            DropIndex("public.OrderDetails", new[] { "Order_Id" });
             DropIndex("public.Roles", new[] { "Staff_Id" });
             DropIndex("public.Roles", new[] { "Product_Id" });
             DropIndex("public.Roles", new[] { "Order_Id" });
@@ -283,6 +331,8 @@
             DropIndex("public.Staffs", new[] { "WorkplaceId" });
             DropIndex("public.Staffs", new[] { "Email" });
             DropIndex("public.Staffs", new[] { "Phone" });
+            DropIndex("public.Orders", new[] { "Store_Id" });
+            DropIndex("public.Orders", new[] { "Staff_Id" });
             DropIndex("public.Stores", new[] { "Owner_Id" });
             DropIndex("public.Stores", new[] { "Name" });
             DropIndex("public.Categories", new[] { "StoreId", "Code" });
@@ -290,6 +340,7 @@
             DropIndex("public.Products", new[] { "Brand_Id" });
             DropIndex("public.Products", new[] { "StoreId" });
             DropIndex("public.Brands", new[] { "StoreId", "Name" });
+            DropTable("public.OrderDetails");
             DropTable("public.RoleStaffs");
             DropTable("public.RoleProducts");
             DropTable("public.RoleOrders");
@@ -298,6 +349,7 @@
             DropTable("public.RoleCustomers");
             DropTable("public.Roles");
             DropTable("public.Staffs");
+            DropTable("public.Orders");
             DropTable("public.Stores");
             DropTable("public.Categories");
             DropTable("public.Products");

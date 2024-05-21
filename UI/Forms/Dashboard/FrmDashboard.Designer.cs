@@ -34,30 +34,30 @@
             this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.panelSidebar = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.sidebarItemOverview = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.sidebarItemSoldAtTheCounter = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
-            this.sidebarItemOrder = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.sidebarItemProduct = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.sidebarItemCustomer = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.sidebarItemStaffManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
-            this.sidebarItemCash = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.sidebarItemReport = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
-            this.sidebarItemAccount = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.sidebarItemSettings = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnLogout = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnToggleSidebar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.lbWelcomeRole = new System.Windows.Forms.Label();
             this.lbWelcome = new System.Windows.Forms.Label();
             this.subFormContainer = new Guna.UI2.WinForms.Guna2Panel();
+            this.sidebarItemOverview = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.sidebarItemSoldAtTheCounter = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.sidebarItemOrder = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.sidebarItemProduct = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.sidebarItemCustomer = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.sidebarItemStaffManagement = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.sidebarItemCash = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.sidebarItemReport = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.sidebarItemAccount = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.sidebarItemSettings = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnToggleSidebar = new Guna.UI2.WinForms.Guna2Button();
             this.logo1 = new Toomeet_Pos.UI.UC.Logo();
             this.controlBoxGroup1 = new Toomeet_Pos.UI.UC.ControlBoxGroupMacOs();
             this.panelSidebar.SuspendLayout();
@@ -121,8 +121,121 @@
             this.flowLayoutPanel1.Controls.Add(this.btnLogout);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 111);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 4287);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 16635);
             this.flowLayoutPanel1.TabIndex = 28;
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Separator1.Location = new System.Drawing.Point(3, 61);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(320, 10);
+            this.guna2Separator1.TabIndex = 37;
+            // 
+            // guna2Separator4
+            // 
+            this.guna2Separator4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Separator4.Location = new System.Drawing.Point(3, 135);
+            this.guna2Separator4.Name = "guna2Separator4";
+            this.guna2Separator4.Size = new System.Drawing.Size(320, 10);
+            this.guna2Separator4.TabIndex = 38;
+            // 
+            // guna2Separator2
+            // 
+            this.guna2Separator2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Separator2.Location = new System.Drawing.Point(3, 325);
+            this.guna2Separator2.Name = "guna2Separator2";
+            this.guna2Separator2.Size = new System.Drawing.Size(320, 10);
+            this.guna2Separator2.TabIndex = 34;
+            // 
+            // guna2Separator3
+            // 
+            this.guna2Separator3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Separator3.Location = new System.Drawing.Point(3, 399);
+            this.guna2Separator3.Name = "guna2Separator3";
+            this.guna2Separator3.Size = new System.Drawing.Size(320, 10);
+            this.guna2Separator3.TabIndex = 36;
+            // 
+            // guna2Separator5
+            // 
+            this.guna2Separator5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Separator5.Location = new System.Drawing.Point(3, 531);
+            this.guna2Separator5.Name = "guna2Separator5";
+            this.guna2Separator5.Size = new System.Drawing.Size(320, 10);
+            this.guna2Separator5.TabIndex = 40;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.Controls.Add(this.txtSearch);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 36);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.guna2Panel2.Size = new System.Drawing.Size(320, 69);
+            this.guna2Panel2.TabIndex = 25;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Controls.Add(this.btnToggleSidebar);
+            this.guna2Panel1.Controls.Add(this.controlBoxGroup1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(320, 36);
+            this.guna2Panel1.TabIndex = 24;
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.lbWelcomeRole);
+            this.guna2ShadowPanel1.Controls.Add(this.lbWelcome);
+            this.guna2ShadowPanel1.Controls.Add(this.logo1);
+            this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(320, 0);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.guna2ShadowPanel1.ShadowDepth = 50;
+            this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1087, 67);
+            this.guna2ShadowPanel1.TabIndex = 1;
+            this.guna2ShadowPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2ShadowPanel1_MouseDown);
+            // 
+            // lbWelcomeRole
+            // 
+            this.lbWelcomeRole.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbWelcomeRole.AutoSize = true;
+            this.lbWelcomeRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWelcomeRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.lbWelcomeRole.Location = new System.Drawing.Point(704, 37);
+            this.lbWelcomeRole.Name = "lbWelcomeRole";
+            this.lbWelcomeRole.Size = new System.Drawing.Size(122, 18);
+            this.lbWelcomeRole.TabIndex = 13;
+            this.lbWelcomeRole.Text = "Quản lý cửa hàng";
+            this.lbWelcomeRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbWelcome
+            // 
+            this.lbWelcome.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbWelcome.AutoSize = true;
+            this.lbWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWelcome.Location = new System.Drawing.Point(702, 12);
+            this.lbWelcome.Name = "lbWelcome";
+            this.lbWelcome.Size = new System.Drawing.Size(192, 25);
+            this.lbWelcome.TabIndex = 12;
+            this.lbWelcome.Text = "Xin Chào, Minh Hiếu";
+            this.lbWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // subFormContainer
+            // 
+            this.subFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subFormContainer.Location = new System.Drawing.Point(320, 67);
+            this.subFormContainer.Name = "subFormContainer";
+            this.subFormContainer.Padding = new System.Windows.Forms.Padding(10);
+            this.subFormContainer.Size = new System.Drawing.Size(1087, 815);
+            this.subFormContainer.TabIndex = 3;
             // 
             // sidebarItemOverview
             // 
@@ -155,14 +268,6 @@
             this.sidebarItemOverview.Text = "Tổng quan";
             this.sidebarItemOverview.Click += new System.EventHandler(this.sidebarItemOverview_Click);
             // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Separator1.Location = new System.Drawing.Point(3, 61);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(320, 10);
-            this.guna2Separator1.TabIndex = 37;
-            // 
             // sidebarItemSoldAtTheCounter
             // 
             this.sidebarItemSoldAtTheCounter.BackColor = System.Drawing.Color.Transparent;
@@ -193,14 +298,6 @@
             this.sidebarItemSoldAtTheCounter.TabIndex = 35;
             this.sidebarItemSoldAtTheCounter.Text = "Bán tại quầy";
             this.sidebarItemSoldAtTheCounter.Click += new System.EventHandler(this.sidebarItemSoldAtTheCounter_Click);
-            // 
-            // guna2Separator4
-            // 
-            this.guna2Separator4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Separator4.Location = new System.Drawing.Point(3, 135);
-            this.guna2Separator4.Name = "guna2Separator4";
-            this.guna2Separator4.Size = new System.Drawing.Size(320, 10);
-            this.guna2Separator4.TabIndex = 38;
             // 
             // sidebarItemOrder
             // 
@@ -295,14 +392,6 @@
             this.sidebarItemCustomer.Text = "Khách hàng";
             this.sidebarItemCustomer.Click += new System.EventHandler(this.sidebarItemCustomer_Click);
             // 
-            // guna2Separator2
-            // 
-            this.guna2Separator2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Separator2.Location = new System.Drawing.Point(3, 325);
-            this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(320, 10);
-            this.guna2Separator2.TabIndex = 34;
-            // 
             // sidebarItemStaffManagement
             // 
             this.sidebarItemStaffManagement.BackColor = System.Drawing.Color.Transparent;
@@ -334,14 +423,6 @@
             this.sidebarItemStaffManagement.TabIndex = 39;
             this.sidebarItemStaffManagement.Text = "Nhân viên";
             this.sidebarItemStaffManagement.Click += new System.EventHandler(this.guna2GradientButton1_Click);
-            // 
-            // guna2Separator3
-            // 
-            this.guna2Separator3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Separator3.Location = new System.Drawing.Point(3, 399);
-            this.guna2Separator3.Name = "guna2Separator3";
-            this.guna2Separator3.Size = new System.Drawing.Size(320, 10);
-            this.guna2Separator3.TabIndex = 36;
             // 
             // sidebarItemCash
             // 
@@ -404,14 +485,6 @@
             this.sidebarItemReport.TabIndex = 33;
             this.sidebarItemReport.Text = "Báo cáo";
             this.sidebarItemReport.Click += new System.EventHandler(this.sidebarItemReport_Click);
-            // 
-            // guna2Separator5
-            // 
-            this.guna2Separator5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Separator5.Location = new System.Drawing.Point(3, 531);
-            this.guna2Separator5.Name = "guna2Separator5";
-            this.guna2Separator5.Size = new System.Drawing.Size(320, 10);
-            this.guna2Separator5.TabIndex = 40;
             // 
             // sidebarItemAccount
             // 
@@ -506,17 +579,6 @@
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.Controls.Add(this.txtSearch);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 36);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2Panel2.Size = new System.Drawing.Size(320, 69);
-            this.guna2Panel2.TabIndex = 25;
-            // 
             // txtSearch
             // 
             this.txtSearch.BorderRadius = 6;
@@ -543,17 +605,6 @@
             this.txtSearch.Size = new System.Drawing.Size(300, 49);
             this.txtSearch.TabIndex = 0;
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.Controls.Add(this.btnToggleSidebar);
-            this.guna2Panel1.Controls.Add(this.controlBoxGroup1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(320, 36);
-            this.guna2Panel1.TabIndex = 24;
-            // 
             // btnToggleSidebar
             // 
             this.btnToggleSidebar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -576,57 +627,6 @@
             this.btnToggleSidebar.Size = new System.Drawing.Size(35, 28);
             this.btnToggleSidebar.TabIndex = 20;
             this.btnToggleSidebar.Click += new System.EventHandler(this.btnToggleSidebar_Click);
-            // 
-            // guna2ShadowPanel1
-            // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.lbWelcomeRole);
-            this.guna2ShadowPanel1.Controls.Add(this.lbWelcome);
-            this.guna2ShadowPanel1.Controls.Add(this.logo1);
-            this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(320, 0);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.guna2ShadowPanel1.ShadowDepth = 50;
-            this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1087, 67);
-            this.guna2ShadowPanel1.TabIndex = 1;
-            this.guna2ShadowPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2ShadowPanel1_MouseDown);
-            // 
-            // lbWelcomeRole
-            // 
-            this.lbWelcomeRole.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbWelcomeRole.AutoSize = true;
-            this.lbWelcomeRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWelcomeRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.lbWelcomeRole.Location = new System.Drawing.Point(704, 37);
-            this.lbWelcomeRole.Name = "lbWelcomeRole";
-            this.lbWelcomeRole.Size = new System.Drawing.Size(138, 18);
-            this.lbWelcomeRole.TabIndex = 13;
-            this.lbWelcomeRole.Text = "Quản lý cửa hàng";
-            this.lbWelcomeRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbWelcome
-            // 
-            this.lbWelcome.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbWelcome.AutoSize = true;
-            this.lbWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWelcome.Location = new System.Drawing.Point(702, 12);
-            this.lbWelcome.Name = "lbWelcome";
-            this.lbWelcome.Size = new System.Drawing.Size(192, 25);
-            this.lbWelcome.TabIndex = 12;
-            this.lbWelcome.Text = "Xin Chào, Minh Hiếu";
-            this.lbWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // subFormContainer
-            // 
-            this.subFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.subFormContainer.Location = new System.Drawing.Point(320, 67);
-            this.subFormContainer.Name = "subFormContainer";
-            this.subFormContainer.Padding = new System.Windows.Forms.Padding(10);
-            this.subFormContainer.Size = new System.Drawing.Size(1087, 815);
-            this.subFormContainer.TabIndex = 3;
             // 
             // logo1
             // 

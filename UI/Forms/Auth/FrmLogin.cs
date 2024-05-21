@@ -34,32 +34,31 @@ namespace Toomeet_Pos.UI.Forms
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            //string username = txtUsername.Value;
-            //ValidateResult validateUsername = _authValidate.IsValidUsername(username);
+            string username = txtUsername.Value;
+            ValidateResult validateUsername = _authValidate.IsValidUsername(username);
 
 
-            //if (validateUsername.IsError)
-            //{
-            //    txtUsername.ErrorMessage = validateUsername.ErrorMessage;
-            //    return;
-            //}
+            if (validateUsername.IsError)
+            {
+                txtUsername.ErrorMessage = validateUsername.ErrorMessage;
+                return;
+            }
 
-            //string password = txtPassword.Value;
-            //ValidateResult validatePassword = _authValidate.IsValidPassword(password);
+            string password = txtPassword.Value;
+            ValidateResult validatePassword = _authValidate.IsValidPassword(password);
 
 
-            //if (validatePassword.IsError)
-            //{
-            //    txtPassword.ErrorMessage = validatePassword.ErrorMessage;
-            //    return;
-            //}
+            if (validatePassword.IsError)
+            {
+                txtPassword.ErrorMessage = validatePassword.ErrorMessage;
+                return;
+            }
 
 
             try
             {
                 btnLogin.Enabled = false;
-                //Staff staff = _staffService.Login(username, password);
-                Staff staff = _staffService.Login("0916561440", "MVPmvp2312@");
+                Staff staff = _staffService.Login(username, password);
 
                 _authService.SetStoreInfo(staff.Workplace);
                 _authService.SetAuthenticatedStaff(staff);

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using Toomeet_Pos.BLL.Interfaces;
 using Toomeet_Pos.DAL.Interfaces;
 using Toomeet_Pos.Entites;
-using Toomeet_Pos.UI.Forms.Order;
+using Toomeet_Pos.UI.Forms.Orders;
 using Toomeet_Pos.UI.Forms.Overview;
 using Toomeet_Pos.UI.Forms.Products;
 using Toomeet_Pos.UI.Forms.Sales;

@@ -1,7 +1,10 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -118,6 +121,7 @@ namespace Toomeet_Pos.UI.Forms.Sales
             item.MaxQuantity = product.InventoryQuantity;
             item.MinQuantity = 0;
             item.Dock = DockStyle.Top;
+            item.UnitOfMeasure = product.UnitOfMeasure;
 
             item.OnQuantityChange += (object _s, EventArgs _e) =>
             {
@@ -187,41 +191,73 @@ namespace Toomeet_Pos.UI.Forms.Sales
             lbOtherPayableAmount.Text = "0";
             lbChange.Text = "0";
             txtAmountGivenByCustomer.Text = "0";
+            orderProductContaier.Controls.Clear();
         }
 
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-          
-            if (cbExportBill.Checked)
+
+            Entites.orders.Order order = new Entites.orders.Order()
             {
-                try
+                CustomerAddress = "",
+                CustomerName = "khách mua lẻ",
+                Change = Convert.ToDouble(lbChange.Text),
+                AmountGivenByCustomer = Convert.ToDouble(txtAmountGivenByCustomer.Text),
+                CustomerDebt = Convert.ToDouble(lbCustomerDebt.Text),
+                Staff = _currentStaff,
+                Store = _store,
+                Total = _totalBill
+            };
+
+
+            List<OrderDetail> orderDetails = new List<OrderDetail>();
+
+            List<ProductOrderWordTemplateDto> productTemplates = new List<ProductOrderWordTemplateDto>();
+
+            foreach (ProductOrderItem item in orderProductContaier.Controls)
+            {
+                productTemplates.Add(new ProductOrderWordTemplateDto()
                 {
+                    Name = item.ProductNameLabel,
+                    Amount = item.Quantity,
+                    CategoryName = item.ProductCategoryLabel,
+                    SkuCode = item.SkuCode,
+                    TotalPrice = item.TotalPrice,
+                    UnitOfMeasure = item.UnitOfMeasure
+                });
+
+                orderDetails.Add(new OrderDetail()
+                {
+                    Order = order,
+                    Product = _orderProducts.FirstOrDefault(p => p.SkuCode.Equals(item.SkuCode)) ?? null,
+                    Quantity = item.Quantity,
+                    Total = item.TotalPrice,
+                    VAT = 0
+                });
+
+            }
 
 
+            try
+            {
+                SaveOrderDto dto = new SaveOrderDto()
+                {
+                    Order = order,
+                    Staff = _currentStaff,
+                    Store = _store
 
-                    SaveOrderDto dto = new SaveOrderDto()
-                    {
-                        Order = new Entites.orders.Order()
-                        {
-                            Products = _orderProducts,
-                            CustomerAddress = "",
-                            CustomerName = "khác mua lẻ",
-                            Change = Convert.ToDouble(lbChange.Text),
-                            AmountGivenByCustomer = Convert.ToDouble(txtAmountGivenByCustomer.Text),
-                            CustomerDebt = Convert.ToDouble(lbCustomerDebt.Text),
-                            Staff = _currentStaff,
-                            Store = _store,
-                            Total = _totalBill
-                        },
-                        Staff = _currentStaff,
-                        Store = _store
+                };
 
-                    };
+                dto.Order.OrderDetails = orderDetails;
 
-                    Entites.orders.Order order = _orderService.CreateOrder(dto);
+                Entites.orders.Order newOrder = _orderService.CreateOrder(dto);
 
 
+              //  _orderService.SaveAllOrderDetails(orderDetails);
+
+                if (cbExportBill.Checked)
+                {
                     SaveFileDialog sf = new SaveFileDialog();
                     DialogResult result = sf.ShowDialog();
 
@@ -230,36 +266,18 @@ namespace Toomeet_Pos.UI.Forms.Sales
                     string templateFilePath = Path.Combine(templatesDirectory, "bao_cao_mau.docx");
 
 
-
-                    List<ProductOrderWordTemplateDto> productTemplates = new List<ProductOrderWordTemplateDto>();
-
-
-                    foreach (ProductOrderItem item in orderProductContaier.Controls)
-                    {
-                        productTemplates.Add(new ProductOrderWordTemplateDto()
-                        {
-                            Name = item.ProductNameLabel,
-                            Amount = item.Quantity,
-                            CategoryName = item.ProductCategoryLabel,
-                            SkuCode = item.SkuCode,
-                            TotalPrice = item.TotalPrice,
-                            UnitOfMeasure = item.UnitOfMeasure
-                        });
-                    }
-
-
                     _wordService.ExportFile(sf.FileName, templateFilePath, new
                     {
-                        storeName = order.Store.Name,
-                        storeAddress = order.Store.Address ?? "",
-                        storePhone = order.Store.Owner?.Phone ?? "",
-                        customerName = order.CustomerName,
-                        customerAddress = order.CustomerAddress,
-                        orderId = order.Id,
+                        storeName = newOrder.Store.Name,
+                        storeAddress = newOrder.Store.Address ?? "",
+                        storePhone = newOrder.Store.Owner?.Phone ?? "",
+                        customerName = newOrder.CustomerName,
+                        customerAddress = newOrder.CustomerAddress,
+                        orderId = newOrder.Id,
 
-                        amountGivenByCustomer = order.AmountGivenByCustomer.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) + "VND",
-                        change = order.Change.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) + "VND",
-                        customerDebt = order.CustomerDebt.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) + "VND",
+                        amountGivenByCustomer = newOrder.AmountGivenByCustomer.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) + "VND",
+                        change = newOrder.Change.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) + "VND",
+                        customerDebt = newOrder.CustomerDebt.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) + "VND",
 
 
                         staffName = _currentStaff.Name,
@@ -269,17 +287,38 @@ namespace Toomeet_Pos.UI.Forms.Sales
                         total = _totalBill.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) + "VND"
                     });
 
-                    MessageBox.Show("Thanh toán thành công", "Kết quả thành toán", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.GetBaseException().Message, "Xuất hóa đơn thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            
+
+                MessageBox.Show("Thanh toán thành công", "Kết quả thành toán", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                _orderProducts.Clear();
+                ResetBill();
+                productSearchResults.Controls.Clear();
             }
-            _orderProducts.Clear();
-            ResetBill();
-            productSearchResults.Controls.Clear();
+            catch (DbEntityValidationException ex)
+            {
+                // Truy cập vào các lỗi xác thực thực thể
+                foreach (var validationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        // In ra thông báo lỗi của từng thuộc tính
+                        Console.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                    }
+                }
+
+                // Bắt lại ngoại lệ và xử lý tùy ý
+                throw;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.GetBaseException().Message, "Xuất hóa đơn thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
+
         }
 
         

@@ -10,14 +10,7 @@ using Toomeet_Pos.Entites.orders;
 
 namespace Toomeet_Pos.BLL
 {
-    public interface IOrderRepository
-    {
-
-        Order SaveOrder(Order order);
-
-        List<Order> GetAllOrderByStoreId(long storeId);
-
-    }
+    
 
 
     public class OrderRepository : IOrderRepository
@@ -44,9 +37,34 @@ namespace Toomeet_Pos.BLL
         public Order SaveOrder(Order order)
         {
             Order newOrder =  _db.Order.Add(order);
-            _db.Entry(order).State = System.Data.Entity.EntityState.Added;
+            _db.Entry(order).State = EntityState.Added;
             _db.SaveChanges();
             return newOrder;
+        }
+
+        public List<Order> GetAllBetweenTime(long storeId, DateTime startTime, DateTime endTime)
+        {
+            return _db.Order
+              .Where(o => o.Store.Id == storeId &&
+                          o.CreatedAt >= startTime &&
+                          o.CreatedAt <= endTime
+                          )
+              .Include(o => o.OrderDetails.Select(od => od.Product)) 
+              .ToList();
+        }
+
+
+        public List<OrderDetail> SaveOrderDetails(List<OrderDetail> orderDetails)
+        {
+            orderDetails.ForEach(orderDetail =>
+            {
+                _db.OrderDetail.Add(orderDetail);
+                _db.Entry(orderDetail).State = EntityState.Added;
+            });
+
+            _db.SaveChanges();
+
+            return orderDetails;
         }
     }
 }

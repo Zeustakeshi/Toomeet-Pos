@@ -1,4 +1,4 @@
-﻿namespace Toomeet_Pos.UI.Forms.Order
+﻿namespace Toomeet_Pos.UI.Forms.Orders
 {
     partial class FrmOrder
     {

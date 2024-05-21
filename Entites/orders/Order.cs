@@ -27,7 +27,8 @@ namespace Toomeet_Pos.Entites.orders
 
         public double Total { get; set; }
 
-        public List<Product> Products { get; set; }
+        [Required]
+        public List<OrderDetail> OrderDetails { get; set; }
 
         [Required]
         public Store Store { get; set; }
